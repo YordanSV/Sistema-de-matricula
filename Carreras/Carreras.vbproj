@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.vbproj" />
+    <ProjectReference Include="..\Sistema de matricula\Sistema de matricula.vbproj" />
   </ItemGroup>
 
   <ItemGroup>
