@@ -1,4 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <carreras>
-	
+	<carrera>
+        <nombre>Computacion</nombre>
+        <cursos>
+            <codigo>RED</codigo>
+        </cursos>
+    </carrera>
+
+    <carrera></carrera>
 </carreras>

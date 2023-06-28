@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.vbproj" />
-    <ProjectReference Include="..\Sistema de matricula\Sistema de matricula.vbproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -12,7 +12,9 @@ Public Class Carrera
 
 
     Private Function AddCarreraXML(rout As String)
-        Dim iXmlCarrera = Datos.
+        Dim iXmlCarrera As New Datos.ArchivosXML
+        Dim xmlClientes As XmlDocument = iXmlCarrera.AddCarreraXML(rout)
+
     End Function
 
     Private Function CreateCarreraTable()
