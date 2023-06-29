@@ -81,12 +81,12 @@ Public Class Curso
         End Set
     End Property
 
-    Private _state As String
-    Public Property State() As String
+    Private _state As Boolean
+    Public Property State() As Boolean
         Get
             Return _state
         End Get
-        Set(ByVal value As String)
+        Set(ByVal value As Boolean)
             _state = value
         End Set
     End Property
@@ -101,8 +101,18 @@ Public Class Curso
         End Set
     End Property
 
-
-
-
+    'Constructor
+    Public Sub New(code As String, semester As Integer, name As String, amountCredits As Integer, minimumNote As Integer, minimumNumberStudents As Integer, maxNumberStudents As Integer, degrees As List(Of String), state As String, courseCost As Integer)
+        _code = code
+        _semester = semester
+        _name = name
+        _amountCredits = amountCredits
+        _minimumNote = minimumNote
+        _minimumNumberStudens = minimumNumberStudents
+        _maxNumberStudents = maxNumberStudents
+        _degrees = degrees
+        _state = state
+        _courseCost = courseCost
+    End Sub
 
 End Class
