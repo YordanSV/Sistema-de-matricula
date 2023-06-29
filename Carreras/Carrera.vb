@@ -15,7 +15,7 @@ Public Class Carrera
 
 
 
-    Private Function register(route As String)
+    Private Function Register(route As String)
         Dim stmData As New MemoryStream
 
         Dim xmlCarrera As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
@@ -116,6 +116,15 @@ Public Class Carrera
             Next
             .WriteEndElement()
 
+            'confirma el xml
+            .Flush()
+
+            'Graba en la ruta indicada
+            Dim iData As New Datos.ArchivosXML
+            iData.Grabar(route, stmData)
+
+            'cerramos el xml
+            .Close()
         End With
     End Function
 
