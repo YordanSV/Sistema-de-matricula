@@ -25,5 +25,27 @@ Namespace My
 
     Partial Friend Class MyApplication
 
+
+
+        Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
+            Dim grados1 As New List(Of String) From {"Bachillerato"}
+            Dim grados2 As New List(Of String) From {"Bachillerato", "Maestria"}
+            Dim grados3 As New List(Of String) From {"Bachillerato", "Maestria", "Doctorado"}
+
+
+            Dim listaCursos As New List(Of Carreras.Curso) From {
+                New Carreras.Curso("12", 3, "matematica", 3, 60, 10, 15, grados2, True, 10000),
+                New Carreras.Curso("12", 5, "ciencias", 3, 65, 15, 20, grados2, True, 10000),
+                New Carreras.Curso("12", 5, "matematica", 3, 70, 10, 15, grados2, True, 10000)
+            }
+
+            Dim carrera As New Carreras.Carrera("TI", "Tecnologias de informacion", True, listaCursos, grados2)
+            carrera.Register("C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml")
+
+
+
+        End Sub
+
+
     End Class
 End Namespace
