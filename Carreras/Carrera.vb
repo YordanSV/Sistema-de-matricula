@@ -12,21 +12,29 @@ Public Class Carrera
     Private _degrees As List(Of String) 'Grado
 
 
+    Public Sub New(code As String, name As String, active As Boolean, courses As List(Of Curso), degrees As List(Of String))
+        _code = code
+        _name = name
+        _active = active
+        _courses = courses
+        _degrees = degrees
+    End Sub
 
 
+    Public Sub Register(route As String)
 
-    Private Function Register(route As String)
         Dim stmData As New MemoryStream
 
         Dim xmlCarrera As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
 
         With xmlCarrera
+            .Formatting = Formatting.Indented  ' Establecer formato automático
 
             .WriteStartDocument(True)
 
-            .WriteStartElement("Carreras")
+            .WriteStartElement("Carrers")
 
-            .WriteStartElement("Carrera")
+            .WriteStartElement("Carrer")
 
 
             .WriteStartElement("code")
@@ -52,15 +60,20 @@ Public Class Carrera
             .WriteEndElement()
 
 
-            .WriteStartElement("courses")
+            .WriteStartElement("semesters")
             'Recorremos 6 semestres
             For i As Integer = 1 To 6
-                .WriteStartElement("semestre")
+                .WriteStartElement("semester")
                 'Le agregamos como atributo el numero de semestre
                 .WriteAttributeString("number", i.ToString())
+                .WriteStartElement("courses")
+
                 For Each course As Curso In Me._courses
                     'Si el curso tiene el semestre correspondiente(i) agregalo si no continue
                     If course.Semester = i Then
+
+                        .WriteStartElement("course")
+
                         .WriteStartElement("Code")
                         .WriteString(course.Code)
                         .WriteEndElement()
@@ -108,12 +121,18 @@ Public Class Carrera
                         .WriteStartElement("CourseCost")
                         .WriteString(course.CourseCost.ToString())
                         .WriteEndElement()
+
+                        .WriteEndElement()
                     Else
                         Continue For
                     End If
                 Next
                 .WriteEndElement()
+                .WriteEndElement()
+
             Next
+            .WriteEndElement()
+            .WriteEndElement()
             .WriteEndElement()
 
             'confirma el xml
@@ -126,11 +145,11 @@ Public Class Carrera
             'cerramos el xml
             .Close()
         End With
-    End Function
+    End Sub
 
     Private Function AddCarreraXML(rout As String)
         Dim iXmlCarrera As New Datos.ArchivosXML
-        Dim xmlClientes As XmlDocument = iXmlCarrera.AddCarreraXML(rout)
+        ' Dim xmlClientes As XmlDocument = iXmlCarrera.AddCarreraXML(rout)
 
     End Function
 
