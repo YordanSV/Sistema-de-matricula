@@ -1,11 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<carreras>
-	<carrera>
-        <nombre>Computacion</nombre>
-        <cursos>
-            <codigo>RED</codigo>
-        </cursos>
-    </carrera>
-
-    <carrera></carrera>
-</carreras>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Carrers>
+  <Carrer>
+    <code>TI</code>
+    <name>Tecnologias de informacion</name>
+    <active>True</active>
+    <degrees>
+      <degree>Bachillerato</degree>
+      <degree>Maestria</degree>
+    </degrees>
+    <semesters>
+      <semester number="1">
+        <courses />
+      </semester>
+      <semester number="2">
+        <courses />
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <Code>12</Code>
+            <Name>matematica</Name>
+            <AmountCredits>3</AmountCredits>
+            <MinimumNote>60</MinimumNote>
+            <MinimumNumberStudents>10</MinimumNumberStudents>
+            <MaxNumberStudents>15</MaxNumberStudents>
+            <Degrees>
+              <Degree>Bachillerato</Degree>
+              <Degree>Maestria</Degree>
+            </Degrees>
+            <State>True</State>
+            <CourseCost>10000</CourseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses />
+      </semester>
+      <semester number="5">
+        <courses>
+          <course>
+            <Code>12</Code>
+            <Name>ciencias</Name>
+            <AmountCredits>3</AmountCredits>
+            <MinimumNote>65</MinimumNote>
+            <MinimumNumberStudents>15</MinimumNumberStudents>
+            <MaxNumberStudents>20</MaxNumberStudents>
+            <Degrees>
+              <Degree>Bachillerato</Degree>
+              <Degree>Maestria</Degree>
+            </Degrees>
+            <State>True</State>
+            <CourseCost>10000</CourseCost>
+          </course>
+          <course>
+            <Code>12</Code>
+            <Name>matematica</Name>
+            <AmountCredits>3</AmountCredits>
+            <MinimumNote>70</MinimumNote>
+            <MinimumNumberStudents>10</MinimumNumberStudents>
+            <MaxNumberStudents>15</MaxNumberStudents>
+            <Degrees>
+              <Degree>Bachillerato</Degree>
+              <Degree>Maestria</Degree>
+            </Degrees>
+            <State>True</State>
+            <CourseCost>10000</CourseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="6">
+        <courses />
+      </semester>
+    </semesters>
+  </Carrer>
+</Carrers>
