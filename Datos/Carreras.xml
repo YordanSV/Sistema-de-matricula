@@ -34,9 +34,6 @@
         </courses>
       </semester>
       <semester number="4">
-        <courses />
-      </semester>
-      <semester number="5">
         <courses>
           <course>
             <Code>12</Code>
@@ -52,6 +49,10 @@
             <State>True</State>
             <CourseCost>10000</CourseCost>
           </course>
+        </courses>
+      </semester>
+      <semester number="5">
+        <courses>
           <course>
             <Code>12</Code>
             <Name>matematica</Name>
