@@ -35,7 +35,7 @@ Namespace My
 
             Dim listaCursos As New List(Of Carreras.Curso) From {
                 New Carreras.Curso("12", 3, "matematica", 3, 60, 10, 15, grados2, True, 10000),
-                New Carreras.Curso("12", 5, "ciencias", 3, 65, 15, 20, grados2, True, 10000),
+                New Carreras.Curso("12", 4, "ciencias", 3, 65, 15, 20, grados2, True, 10000),
                 New Carreras.Curso("12", 5, "matematica", 3, 70, 10, 15, grados2, True, 10000)
             }
 
