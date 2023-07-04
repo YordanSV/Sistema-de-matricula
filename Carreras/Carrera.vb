@@ -32,9 +32,9 @@ Public Class Carrera
 
             .WriteStartDocument(True)
 
-            .WriteStartElement("Carrers")
+            .WriteStartElement("carrers")
 
-            .WriteStartElement("Carrer")
+            .WriteStartElement("carrer")
 
 
             .WriteStartElement("code")
@@ -74,39 +74,39 @@ Public Class Carrera
 
                         .WriteStartElement("course")
 
-                        .WriteStartElement("Code")
+                        .WriteStartElement("code")
                         .WriteString(course.Code)
                         .WriteEndElement()
 
                         ' Escribir el atributo "Name"
-                        .WriteStartElement("Name")
+                        .WriteStartElement("name")
                         .WriteString(course.Name)
                         .WriteEndElement()
 
                         ' Escribir el atributo "AmountCredits"
-                        .WriteStartElement("AmountCredits")
+                        .WriteStartElement("amountCredits")
                         .WriteString(course.AmountCredits.ToString())
                         .WriteEndElement()
 
                         ' Escribir el atributo "MinimumNote"
-                        .WriteStartElement("MinimumNote")
+                        .WriteStartElement("minimumNote")
                         .WriteString(course.MinimumNote.ToString())
                         .WriteEndElement()
 
                         ' Escribir el atributo "MinimumNumberStudents"
-                        .WriteStartElement("MinimumNumberStudents")
+                        .WriteStartElement("minimumNumberStudents")
                         .WriteString(course.MinimumNumberStudents.ToString())
                         .WriteEndElement()
 
                         ' Escribir el atributo "MaxNumberStudents"
-                        .WriteStartElement("MaxNumberStudents")
+                        .WriteStartElement("maxNumberStudents")
                         .WriteString(course.MaxNumberStudents.ToString())
                         .WriteEndElement()
 
                         ' Escribir el atributo "Degrees"
-                        .WriteStartElement("Degrees")
+                        .WriteStartElement("degrees")
                         For Each degree As String In course.Degrees
-                            .WriteStartElement("Degree")
+                            .WriteStartElement("degree")
                             .WriteString(degree)
                             .WriteEndElement()
                         Next
@@ -118,7 +118,7 @@ Public Class Carrera
                         .WriteEndElement()
 
                         ' Escribir el atributo "CourseCost"
-                        .WriteStartElement("CourseCost")
+                        .WriteStartElement("courseCost")
                         .WriteString(course.CourseCost.ToString())
                         .WriteEndElement()
 

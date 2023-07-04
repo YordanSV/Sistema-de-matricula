@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<Carrers>
-  <Carrer>
+<carrers>
+  <carrer>
     <code>TI</code>
     <name>Tecnologias de informacion</name>
     <active>True</active>
     <degrees>
       <degree>Bachillerato</degree>
-      <degree>Maestria</degree>
+       <degree>Maestria</degree>
     </degrees>
     <semesters>
       <semester number="1">
@@ -18,54 +18,54 @@
       <semester number="3">
         <courses>
           <course>
-            <Code>12</Code>
-            <Name>matematica</Name>
-            <AmountCredits>3</AmountCredits>
-            <MinimumNote>60</MinimumNote>
-            <MinimumNumberStudents>10</MinimumNumberStudents>
-            <MaxNumberStudents>15</MaxNumberStudents>
-            <Degrees>
-              <Degree>Bachillerato</Degree>
-              <Degree>Maestria</Degree>
-            </Degrees>
+            <code>12</code>
+            <name>matematica</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>60</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>15</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
             <State>True</State>
-            <CourseCost>10000</CourseCost>
+            <courseCost>10000</courseCost>
           </course>
         </courses>
       </semester>
       <semester number="4">
         <courses>
           <course>
-            <Code>12</Code>
-            <Name>ciencias</Name>
-            <AmountCredits>3</AmountCredits>
-            <MinimumNote>65</MinimumNote>
-            <MinimumNumberStudents>15</MinimumNumberStudents>
-            <MaxNumberStudents>20</MaxNumberStudents>
-            <Degrees>
-              <Degree>Bachillerato</Degree>
-              <Degree>Maestria</Degree>
-            </Degrees>
+            <code>12</code>
+            <name>ciencias</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>65</minimumNote>
+            <minimumNumberStudents>15</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
             <State>True</State>
-            <CourseCost>10000</CourseCost>
+            <courseCost>10000</courseCost>
           </course>
         </courses>
       </semester>
       <semester number="5">
         <courses>
           <course>
-            <Code>12</Code>
-            <Name>matematica</Name>
-            <AmountCredits>3</AmountCredits>
-            <MinimumNote>70</MinimumNote>
-            <MinimumNumberStudents>10</MinimumNumberStudents>
-            <MaxNumberStudents>15</MaxNumberStudents>
-            <Degrees>
-              <Degree>Bachillerato</Degree>
-              <Degree>Maestria</Degree>
-            </Degrees>
+            <code>12</code>
+            <name>matematica</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>15</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
             <State>True</State>
-            <CourseCost>10000</CourseCost>
+            <courseCost>10000</courseCost>
           </course>
         </courses>
       </semester>
@@ -73,5 +73,5 @@
         <courses />
       </semester>
     </semesters>
-  </Carrer>
-</Carrers>
+  </carrer>
+</carrers>
