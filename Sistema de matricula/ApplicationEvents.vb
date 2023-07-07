@@ -40,7 +40,7 @@ Namespace My
             }
 
             Dim carrera As New Carreras.Carrera("TI", "Tecnologias de informacion", True, listaCursos, grados2)
-            carrera.Register("C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml")
+            carrera.Register("C:\Users\AMD RYZEN 5 2400G\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml")
 
 
 
