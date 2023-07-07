@@ -45,10 +45,10 @@ Partial Class FormModificacionCursos
         ' 
         TablaCursos.AllowUserToOrderColumns = True
         TablaCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        TablaCursos.Location = New Point(97, 41)
+        TablaCursos.Location = New Point(12, 128)
         TablaCursos.Name = "TablaCursos"
         TablaCursos.RowTemplate.Height = 25
-        TablaCursos.Size = New Size(943, 347)
+        TablaCursos.Size = New Size(1060, 395)
         TablaCursos.TabIndex = 0
         ' 
         ' btnRegistrarCurso
@@ -116,7 +116,7 @@ Partial Class FormModificacionCursos
         ' 
         ' txtCourseCost
         ' 
-        txtCourseCost.Location = New Point(948, 13)
+        txtCourseCost.Location = New Point(972, 99)
         txtCourseCost.Name = "txtCourseCost"
         txtCourseCost.Size = New Size(100, 23)
         txtCourseCost.TabIndex = 11
@@ -132,9 +132,9 @@ Partial Class FormModificacionCursos
         ' cmbActive
         ' 
         cmbActive.FormattingEnabled = True
-        cmbActive.Location = New Point(857, 13)
+        cmbActive.Location = New Point(857, 99)
         cmbActive.Name = "cmbActive"
-        cmbActive.Size = New Size(60, 23)
+        cmbActive.Size = New Size(109, 23)
         cmbActive.TabIndex = 13
         ' 
         ' txtCarreraCode
