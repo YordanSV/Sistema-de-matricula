@@ -45,17 +45,17 @@ Partial Class FormModificacionCursos
         ' 
         TablaCursos.AllowUserToOrderColumns = True
         TablaCursos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        TablaCursos.Location = New Point(97, 41)
+        TablaCursos.Location = New Point(12, 106)
         TablaCursos.Name = "TablaCursos"
         TablaCursos.RowTemplate.Height = 25
-        TablaCursos.Size = New Size(943, 347)
+        TablaCursos.Size = New Size(1460, 416)
         TablaCursos.TabIndex = 0
         ' 
         ' btnRegistrarCurso
         ' 
-        btnRegistrarCurso.Location = New Point(0, 8)
+        btnRegistrarCurso.Location = New Point(375, 24)
         btnRegistrarCurso.Name = "btnRegistrarCurso"
-        btnRegistrarCurso.Size = New Size(91, 28)
+        btnRegistrarCurso.Size = New Size(91, 23)
         btnRegistrarCurso.TabIndex = 2
         btnRegistrarCurso.Text = "Agregar"
         btnRegistrarCurso.UseVisualStyleBackColor = True
@@ -67,88 +67,99 @@ Partial Class FormModificacionCursos
         ' 
         ' txtCourseCode
         ' 
-        txtCourseCode.Location = New Point(183, 12)
+        txtCourseCode.Location = New Point(131, 77)
         txtCourseCode.Name = "txtCourseCode"
-        txtCourseCode.Size = New Size(74, 23)
+        txtCourseCode.Size = New Size(97, 23)
         txtCourseCode.TabIndex = 3
+        txtCourseCode.Text = "Código"
         ' 
         ' txtCourseName
         ' 
-        txtCourseName.Location = New Point(263, 12)
+        txtCourseName.Location = New Point(234, 77)
         txtCourseName.Name = "txtCourseName"
-        txtCourseName.Size = New Size(67, 23)
+        txtCourseName.Size = New Size(97, 23)
         txtCourseName.TabIndex = 4
+        txtCourseName.Text = "Nombre"
         ' 
         ' txtCredits
         ' 
-        txtCredits.Location = New Point(336, 13)
+        txtCredits.Location = New Point(337, 77)
         txtCredits.Name = "txtCredits"
-        txtCredits.Size = New Size(76, 23)
+        txtCredits.Size = New Size(97, 23)
         txtCredits.TabIndex = 5
+        txtCredits.Text = "Créditos"
         ' 
         ' txtMinNote
         ' 
-        txtMinNote.Location = New Point(418, 13)
+        txtMinNote.Location = New Point(440, 77)
         txtMinNote.Name = "txtMinNote"
-        txtMinNote.Size = New Size(100, 23)
+        txtMinNote.Size = New Size(97, 23)
         txtMinNote.TabIndex = 6
+        txtMinNote.Text = "Min Nota"
         ' 
         ' txtMinStudents
         ' 
-        txtMinStudents.Location = New Point(524, 13)
+        txtMinStudents.Location = New Point(543, 77)
         txtMinStudents.Name = "txtMinStudents"
-        txtMinStudents.Size = New Size(100, 23)
+        txtMinStudents.Size = New Size(97, 23)
         txtMinStudents.TabIndex = 7
+        txtMinStudents.Text = "Min Estudiantes"
         ' 
         ' txtMaxStudents
         ' 
-        txtMaxStudents.Location = New Point(630, 13)
+        txtMaxStudents.Location = New Point(646, 77)
         txtMaxStudents.Name = "txtMaxStudents"
-        txtMaxStudents.Size = New Size(100, 23)
+        txtMaxStudents.Size = New Size(97, 23)
         txtMaxStudents.TabIndex = 8
+        txtMaxStudents.Text = "Max Estudiantes"
         ' 
         ' txtDegrees
         ' 
-        txtDegrees.Location = New Point(736, 13)
+        txtDegrees.Location = New Point(749, 77)
         txtDegrees.Name = "txtDegrees"
-        txtDegrees.Size = New Size(100, 23)
+        txtDegrees.Size = New Size(97, 23)
         txtDegrees.TabIndex = 9
+        txtDegrees.Text = "Grados"
         ' 
         ' txtCourseCost
         ' 
-        txtCourseCost.Location = New Point(948, 13)
+        txtCourseCost.Location = New Point(955, 77)
         txtCourseCost.Name = "txtCourseCost"
-        txtCourseCost.Size = New Size(100, 23)
+        txtCourseCost.Size = New Size(97, 23)
         txtCourseCost.TabIndex = 11
+        txtCourseCost.Text = "10000"
         ' 
         ' cmbSemester
         ' 
         cmbSemester.FormattingEnabled = True
-        cmbSemester.Location = New Point(97, 12)
+        cmbSemester.Location = New Point(5, 77)
         cmbSemester.Name = "cmbSemester"
-        cmbSemester.Size = New Size(80, 23)
+        cmbSemester.Size = New Size(120, 23)
         cmbSemester.TabIndex = 12
+        cmbSemester.Text = "Número Semestre"
         ' 
         ' cmbActive
         ' 
         cmbActive.FormattingEnabled = True
-        cmbActive.Location = New Point(857, 13)
+        cmbActive.Location = New Point(852, 77)
         cmbActive.Name = "cmbActive"
-        cmbActive.Size = New Size(60, 23)
+        cmbActive.Size = New Size(97, 23)
         cmbActive.TabIndex = 13
+        cmbActive.Text = "Estado"
         ' 
         ' txtCarreraCode
         ' 
-        txtCarreraCode.Location = New Point(-9, 77)
+        txtCarreraCode.Location = New Point(472, 24)
         txtCarreraCode.Name = "txtCarreraCode"
-        txtCarreraCode.Size = New Size(100, 23)
+        txtCarreraCode.Size = New Size(112, 23)
         txtCarreraCode.TabIndex = 14
+        txtCarreraCode.Text = "Código Semestre"
         ' 
         ' FormModificacionCursos
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1084, 595)
+        ClientSize = New Size(1536, 595)
         Controls.Add(txtCarreraCode)
         Controls.Add(cmbActive)
         Controls.Add(cmbSemester)

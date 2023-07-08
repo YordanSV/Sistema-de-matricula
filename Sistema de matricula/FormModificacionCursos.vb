@@ -1,7 +1,7 @@
 ﻿Imports System.Xml
 
 Public Class FormModificacionCursos
-    Private xmlFilePath As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
+    Private xmlFilePath As String = "C:\Users\AMD RYZEN 5 2400G\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml"
     Private xmlDoc As New XmlDocument()
 
     Private Sub FormModificacionCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,7 +40,7 @@ Public Class FormModificacionCursos
                 Dim minStudents As String = course.SelectSingleNode("minimumNumberStudents").InnerText
                 Dim maxStudents As String = course.SelectSingleNode("maxNumberStudents").InnerText
                 Dim degrees As String = String.Join(", ", course.SelectNodes("degrees/degree").Cast(Of XmlNode)().Select(Function(d) d.InnerText))
-                Dim active As String = course.SelectSingleNode("State").InnerText
+                Dim active As String = course.SelectSingleNode("state").InnerText
                 Dim courseCost As String = course.SelectSingleNode("courseCost").InnerText
 
                 TablaCursos.Rows.Add(semesterNumber, courseCode, courseName, credits, minNote, minStudents, maxStudents, degrees, active, courseCost)
@@ -145,6 +145,7 @@ Public Class FormModificacionCursos
         Dim degrees As String = txtDegrees.Text
         Dim active As String = cmbActive.Text
         Dim courseCost As String = txtCourseCost.Text
+        MessageBox.Show(txtCourseCost.Text, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
 
         ' Agregar los datos al DataGridView
         Dim newRow As DataGridViewRow = New DataGridViewRow()
@@ -168,7 +169,43 @@ Public Class FormModificacionCursos
         nameNode.InnerText = courseName
         newCourse.AppendChild(nameNode)
 
-        ' Resto del código para agregar los demás elementos...
+        Dim amountCreditsNode As XmlNode = xmlDoc.CreateElement("amountCredits")
+        amountCreditsNode.InnerText = credits
+        newCourse.AppendChild(amountCreditsNode)
+
+        Dim minimumNoteNode As XmlNode = xmlDoc.CreateElement("minimumNote")
+        minimumNoteNode.InnerText = minNote
+        newCourse.AppendChild(minimumNoteNode)
+
+        Dim minimumNumberStudentsNode As XmlNode = xmlDoc.CreateElement("minimumNumberStudents")
+        minimumNumberStudentsNode.InnerText = minStudents
+        newCourse.AppendChild(minimumNumberStudentsNode)
+
+        Dim maxNumberStudentsNode As XmlNode = xmlDoc.CreateElement("maxNumberStudents")
+        maxNumberStudentsNode.InnerText = maxStudents
+        newCourse.AppendChild(maxNumberStudentsNode)
+
+        Dim degreesNode As XmlNode = xmlDoc.CreateElement("degrees")
+        newCourse.AppendChild(degreesNode)
+
+        Dim levels As String() = degrees.Split(","c)
+
+        For Each level As String In levels
+            Dim degreeNode As XmlNode = xmlDoc.CreateElement("degree")
+            degreeNode.InnerText = level.Trim()
+            degreesNode.AppendChild(degreeNode)
+        Next
+
+
+
+        Dim activeNode As XmlNode = xmlDoc.CreateElement("state")
+        activeNode.InnerText = active
+        newCourse.AppendChild(activeNode)
+
+        Dim courseCostNode As XmlNode = xmlDoc.CreateElement("courseCost")
+        courseCostNode.InnerText = courseCost
+        newCourse.AppendChild(courseCostNode)
+
 
         coursesNode.AppendChild(newCourse)
 
@@ -189,7 +226,7 @@ Public Class FormModificacionCursos
         txtMaxStudents.Text = ""
         txtDegrees.Text = ""
         cmbActive.SelectedIndex = -1
-        txtCourseCost.Text = ""
+        txtCourseCost.Text = "10000"
     End Sub
 
 

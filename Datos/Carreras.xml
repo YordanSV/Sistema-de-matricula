@@ -6,7 +6,7 @@
     <active>True</active>
     <degrees>
       <degree>Bachillerato</degree>
-       <degree>Maestria</degree>
+      <degree>Maestria</degree>
     </degrees>
     <semesters>
       <semester number="1">
@@ -21,13 +21,10 @@
             <code>12</code>
             <name>matematica</name>
             <amountCredits>3</amountCredits>
-            <minimumNote>60</minimumNote>
+            <minimumNote>75</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
             <maxNumberStudents>15</maxNumberStudents>
-            <degrees>
-              <degree>Bachillerato</degree>
-              <degree>Maestria</degree>
-            </degrees>
+            <degrees>Bachillerato, Maestria</degrees>
             <State>True</State>
             <courseCost>10000</courseCost>
           </course>
@@ -42,10 +39,7 @@
             <minimumNote>65</minimumNote>
             <minimumNumberStudents>15</minimumNumberStudents>
             <maxNumberStudents>20</maxNumberStudents>
-            <degrees>
-              <degree>Bachillerato</degree>
-              <degree>Maestria</degree>
-            </degrees>
+            <degrees>Bachillerato, Maestria</degrees>
             <State>True</State>
             <courseCost>10000</courseCost>
           </course>
@@ -60,10 +54,7 @@
             <minimumNote>70</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
             <maxNumberStudents>15</maxNumberStudents>
-            <degrees>
-              <degree>Bachillerato</degree>
-              <degree>Maestria</degree>
-            </degrees>
+            <degrees>Bachillerato, Maestria</degrees>
             <State>True</State>
             <courseCost>10000</courseCost>
           </course>

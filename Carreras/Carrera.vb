@@ -113,7 +113,7 @@ Public Class Carrera
                         .WriteEndElement()
 
                         ' Escribir el atributo "State"
-                        .WriteStartElement("State")
+                        .WriteStartElement("state")
                         .WriteString(course.State.ToString())
                         .WriteEndElement()
 
