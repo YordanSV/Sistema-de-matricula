@@ -23,16 +23,28 @@ Public Class Carrera
 
     Public Sub Register(route As String)
 
-        Dim stmData As New MemoryStream
+        Dim existingData As MemoryStream = Nothing
+        If File.Exists(route) Then
+            existingData = New MemoryStream(File.ReadAllBytes(route))
+        End If
 
+        Dim stmData As New MemoryStream
         Dim xmlCarrera As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
 
         With xmlCarrera
             .Formatting = Formatting.Indented  ' Establecer formato automático
 
-            .WriteStartDocument(True)
-
-            .WriteStartElement("carrers")
+            If existingData IsNot Nothing Then
+                ' Cargar el contenido existente del archivo XML
+                Dim xmlDocument As New XmlDocument()
+                xmlDocument.Load(existingData)
+                xmlDocument.WriteContentTo(xmlCarrera)
+                .WriteStartElement("carrers")
+            Else
+                ' Crear un nuevo documento XML si no existe un archivo XML previo
+                .WriteStartDocument(True)
+                .WriteStartElement("carrers")
+            End If
 
             .WriteStartElement("carrer")
 
@@ -140,11 +152,13 @@ Public Class Carrera
 
             'Graba en la ruta indicada
             Dim iData As New Datos.ArchivosXML
-            iData.Grabar(route, stmData)
+           iData.Grabar(route, stmData)
 
             'cerramos el xml
             .Close()
         End With
+        File.WriteAllBytes(route, stmData.ToArray())
+
     End Sub
 
     Private Function AddCarreraXML(rout As String)

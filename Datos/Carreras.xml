@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<carrers>
+</carrers>
 <carrers>
   <carrer>
     <code>TI</code>
@@ -21,11 +23,14 @@
             <code>12</code>
             <name>matematica</name>
             <amountCredits>3</amountCredits>
-            <minimumNote>75</minimumNote>
+            <minimumNote>60</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
             <maxNumberStudents>15</maxNumberStudents>
-            <degrees>Bachillerato, Maestria</degrees>
-            <State>True</State>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
             <courseCost>10000</courseCost>
           </course>
         </courses>
@@ -39,8 +44,11 @@
             <minimumNote>65</minimumNote>
             <minimumNumberStudents>15</minimumNumberStudents>
             <maxNumberStudents>20</maxNumberStudents>
-            <degrees>Bachillerato, Maestria</degrees>
-            <State>True</State>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
             <courseCost>10000</courseCost>
           </course>
         </courses>
@@ -54,8 +62,11 @@
             <minimumNote>70</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
             <maxNumberStudents>15</maxNumberStudents>
-            <degrees>Bachillerato, Maestria</degrees>
-            <State>True</State>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
             <courseCost>10000</courseCost>
           </course>
         </courses>

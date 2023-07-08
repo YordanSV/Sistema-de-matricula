@@ -1,4 +1,6 @@
-﻿Imports Microsoft.VisualBasic.ApplicationServices
+﻿Imports System.IO
+Imports Carreras
+Imports Microsoft.VisualBasic.ApplicationServices
 
 Namespace My
     ' The following events are available for MyApplication:
@@ -32,19 +34,23 @@ Namespace My
             Dim grados2 As New List(Of String) From {"Bachillerato", "Maestria"}
             Dim grados3 As New List(Of String) From {"Bachillerato", "Maestria", "Doctorado"}
 
-
-            Dim listaCursos As New List(Of Carreras.Curso) From {
+            Dim listaCursos1 As New List(Of Carreras.Curso) From {
                 New Carreras.Curso("12", 3, "matematica", 3, 60, 10, 15, grados2, True, 10000),
                 New Carreras.Curso("12", 4, "ciencias", 3, 65, 15, 20, grados2, True, 10000),
                 New Carreras.Curso("12", 5, "matematica", 3, 70, 10, 15, grados2, True, 10000)
             }
 
-            Dim carrera As New Carreras.Carrera("TI", "Tecnologias de informacion", True, listaCursos, grados2)
-            carrera.Register("C:\Users\AMD RYZEN 5 2400G\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml")
+            Dim listaCursos2 As New List(Of Carreras.Curso) From {
+                New Carreras.Curso("34", 1, "historia", 3, 50, 5, 10, grados1, True, 8000),
+                New Carreras.Curso("34", 2, "geografia", 3, 55, 8, 12, grados1, True, 8000),
+                New Carreras.Curso("34", 3, "economia", 3, 60, 10, 15, grados2, True, 8000)
+            }
 
-            Dim administrador As New Usuarios.Administrador(1234, 12345, "Yordan Salazar", "61536053", "yordan@", "1999-02-03", "Naranjo", "password")
-            administrador.
+            Dim carrera1 As New Carrera("TI", "Tecnologias de informacion", True, listaCursos1, grados2)
+            Dim carrera2 As New Carrera("HI", "Historia", True, listaCursos2, grados1)
 
+            carrera1.Register("C:\Users\Usuario\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml")
+            carrera2.Register("C:\Users\Usuario\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml")
         End Sub
 
 

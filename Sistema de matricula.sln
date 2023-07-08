@@ -4,12 +4,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.6.33712.159
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Sistema de matricula", "Sistema de matricula\Sistema de matricula.vbproj", "{A420E24A-0E29-4DBE-B469-7C52AC95E417}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2C16A715-9EF1-4F5D-B5C2-431184A5A397} = {2C16A715-9EF1-4F5D-B5C2-431184A5A397}
+	EndProjectSection
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Carreras", "Carreras\Carreras.vbproj", "{011E5C48-B604-4F81-8052-6774FCF5A7A9}"
 EndProject
 Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Datos", "Datos\Datos.vbproj", "{F75EA467-96F8-45DC-9C61-37C6375DD420}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Usuarios", "Usuarios\Usuarios.vbproj", "{2C16A715-9EF1-4F5D-B5C2-431184A5A397}"
+Project("{778DAE3C-4631-46EA-AA77-85C1314464D9}") = "Usuarios", "Usuarios\Usuarios.vbproj", "{2C16A715-9EF1-4F5D-B5C2-431184A5A397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

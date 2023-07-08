@@ -15,9 +15,7 @@ Public Class ArchivosXML
         xmlData.WriteTo(fileXML)
         fileXML.Close()
         xmlData.Close()
-
     End Sub
-
     Public Function read(ByVal route As String) As XmlDocument
         Dim xmlArchivo As New XmlDocument
         xmlArchivo.Load(route)

@@ -6,12 +6,16 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
+    <ImportedNamespaces>Datos=False,Sistema_de_matricula=False,System.Data=False,System.Drawing=False,System.Windows.Forms=False,Usuarios=False,Microsoft.VisualBasic=True,System=True,System.Collections=True,System.Collections.Generic=True,System.Diagnostics=True,System.Linq=True,System.Xml.Linq=True,System.Threading.Tasks=True,Carreras=True</ImportedNamespaces>
   </PropertyGroup>
 
   <ItemGroup>
+    <Import Include="Datos" />
+    <Import Include="Sistema_de_matricula" />
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+    <Import Include="Usuarios" />
   </ItemGroup>
 
   <ItemGroup>
