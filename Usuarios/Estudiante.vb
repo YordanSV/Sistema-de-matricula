@@ -1,88 +1,71 @@
 ﻿Imports System.IO
 Imports System.Xml
+Imports Carreras.Carrera
+
 
 Public Class Estudiante
     Inherits Usuario
 
-    Private _carrerasMatriculadas As List(Of String)
+    Private _carrerasMatriculadas As List(Of Carreras.Carrera)
 
-    Public Sub New(ByVal carne As Integer, ByVal identificacion As String, ByVal nombreCompleto As String, ByVal telefono As String, ByVal correoElectronico As String, ByVal fechaNacimiento As DateTime, ByVal direccion As String, ByVal carrerasMatriculadas As List(Of String))
+    Public Sub New(ByVal carne As Integer, ByVal identificacion As String, ByVal nombreCompleto As String, ByVal telefono As String, ByVal correoElectronico As String, ByVal fechaNacimiento As DateTime, ByVal direccion As String, ByVal carrerasMatriculadas As List(Of Carreras.Carrera))
         MyBase.New(carne, identificacion, nombreCompleto, telefono, correoElectronico, fechaNacimiento, direccion)
         _carrerasMatriculadas = carrerasMatriculadas
     End Sub
 
-    Public Property CarrerasMatriculadas As List(Of String)
+    Public Property CarrerasMatriculadas As List(Of Carreras.Carrera)
         Get
             Return _carrerasMatriculadas
         End Get
-        Set(ByVal value As List(Of String))
+        Set(ByVal value As List(Of Carreras.Carrera))
             _carrerasMatriculadas = value
         End Set
     End Property
 
 
+
     Public Sub Register(route As String)
-        ' Código para registrar el estudiante en el archivo XML
-        Dim stmData As New MemoryStream()
+        ' Crea un nuevo documento XML
+        Dim xmlDoc As New XmlDocument()
 
-        Dim xmlEstudiante As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
+        ' Intenta cargar el contenido del archivo XML existente
+        Try
+            xmlDoc.Load(route)
+        Catch ex As Exception
+            ' Si el archivo no existe o no se puede cargar, crea un nuevo documento
+            Dim declaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
+            xmlDoc.AppendChild(declaration)
 
-        With xmlEstudiante
-            .Formatting = Formatting.Indented  ' Establecer formato automático
+            Dim rootElement As XmlElement = xmlDoc.CreateElement("estudiantes")
+            xmlDoc.AppendChild(rootElement)
+        End Try
 
-            .WriteStartDocument(True)
+        ' Obtiene la referencia al elemento raíz
+        Dim root As XmlElement = xmlDoc.DocumentElement
 
-            .WriteStartElement("estudiantes")
+        ' Crea el elemento para el nuevo estudiante
+        Dim estudianteElement As XmlElement = xmlDoc.CreateElement("estudiante")
+        root.AppendChild(estudianteElement)
 
-            .WriteStartElement("estudiante")
+        ' Agrega los elementos de datos del estudiante
+        AddXmlElement(xmlDoc, estudianteElement, "carne", Me.Carne.ToString())
+        AddXmlElement(xmlDoc, estudianteElement, "identificacion", Me.Identificacion)
+        AddXmlElement(xmlDoc, estudianteElement, "nombreCompleto", Me.NombreCompleto)
+        AddXmlElement(xmlDoc, estudianteElement, "telefono", Me.Telefono)
+        AddXmlElement(xmlDoc, estudianteElement, "correoElectronico", Me.CorreoElectronico)
+        AddXmlElement(xmlDoc, estudianteElement, "fechaNacimiento", Me.FechaNacimiento.ToString())
+        AddXmlElement(xmlDoc, estudianteElement, "direccion", Me.Direccion)
 
-            .WriteStartElement("carne")
-            .WriteString(Me.Carne.ToString())
-            .WriteEndElement()
+        ' Agrega las carreras matriculadas
+        Dim carrerasMatriculadasElement As XmlElement = xmlDoc.CreateElement("carrerasMatriculadas")
+        estudianteElement.AppendChild(carrerasMatriculadasElement)
+        For Each carrera As Carreras.Carrera In Me._carrerasMatriculadas
+            AddXmlElement(xmlDoc, carrerasMatriculadasElement, "CodigoCarrera", carrera._code)
+        Next
 
-            .WriteStartElement("identificacion")
-            .WriteString(Me.Identificacion)
-            .WriteEndElement()
-
-            .WriteStartElement("nombreCompleto")
-            .WriteString(Me.NombreCompleto)
-            .WriteEndElement()
-
-            .WriteStartElement("telefono")
-            .WriteString(Me.Telefono)
-            .WriteEndElement()
-
-            .WriteStartElement("correoElectronico")
-            .WriteString(Me.CorreoElectronico)
-            .WriteEndElement()
-
-            .WriteStartElement("fechaNacimiento")
-            .WriteString(Me.FechaNacimiento.ToString("yyyy-MM-dd"))
-            .WriteEndElement()
-
-            .WriteStartElement("direccion")
-            .WriteString(Me.Direccion)
-            .WriteEndElement()
-
-            .WriteStartElement("carrerasMatriculadas")
-            For Each carrera As String In Me.CarrerasMatriculadas
-                .WriteStartElement("carrera")
-                .WriteString(carrera)
-                .WriteEndElement()
-            Next
-            .WriteEndElement()
-
-            .WriteEndElement()
-            .WriteEndElement()
-            .WriteEndElement()
-
-            .Flush()
-
-            ' Graba en la ruta indicada
-            Dim iData As New Datos.ArchivosXML
-            iData.Grabar(route, stmData)
-
-            .Close()
-        End With
+        ' Guarda el documento XML en el archivo
+        xmlDoc.Save(route)
     End Sub
+
+
 End Class

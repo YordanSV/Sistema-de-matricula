@@ -5,7 +5,7 @@ Imports System.Xml
 Imports System.Windows.Forms.AxHost
 
 Public Class Carrera
-    Private _code As String
+    Public _code As String
     Private _name As String
     Private _active As Boolean
     Private _courses As List(Of Curso)
@@ -20,145 +20,84 @@ Public Class Carrera
         _degrees = degrees
     End Sub
 
-
     Public Sub Register(route As String)
+        ' Crea un nuevo documento XML
+        Dim xmlDoc As New XmlDocument()
 
-        Dim existingData As MemoryStream = Nothing
-        If File.Exists(route) Then
-            existingData = New MemoryStream(File.ReadAllBytes(route))
-        End If
+        ' Intenta cargar el contenido del archivo XML existente
+        Try
+            xmlDoc.Load(route)
+        Catch ex As Exception
+            ' Si el archivo no existe o no se puede cargar, crea un nuevo documento
+            Dim declaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
+            xmlDoc.AppendChild(declaration)
 
-        Dim stmData As New MemoryStream
-        Dim xmlCarrera As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
+            Dim rootElement As XmlElement = xmlDoc.CreateElement("carrers")
+            xmlDoc.AppendChild(rootElement)
+        End Try
 
-        With xmlCarrera
-            .Formatting = Formatting.Indented  ' Establecer formato automático
+        ' Obtiene la referencia al elemento raíz
+        Dim root As XmlElement = xmlDoc.DocumentElement
 
-            If existingData IsNot Nothing Then
-                ' Cargar el contenido existente del archivo XML
-                Dim xmlDocument As New XmlDocument()
-                xmlDocument.Load(existingData)
-                xmlDocument.WriteContentTo(xmlCarrera)
-                .WriteStartElement("carrers")
-            Else
-                ' Crear un nuevo documento XML si no existe un archivo XML previo
-                .WriteStartDocument(True)
-                .WriteStartElement("carrers")
-            End If
+        ' Crea el elemento para la nueva carrera
+        Dim carreraElement As XmlElement = xmlDoc.CreateElement("carrer")
+        root.AppendChild(carreraElement)
 
-            .WriteStartElement("carrer")
+        ' Agrega los elementos de datos de la carrera
+        AddXmlElement(xmlDoc, carreraElement, "code", Me._code)
+        AddXmlElement(xmlDoc, carreraElement, "name", Me._name)
+        AddXmlElement(xmlDoc, carreraElement, "active", Me._active.ToString())
 
+        ' Agrega los grados
+        Dim degreesElement As XmlElement = xmlDoc.CreateElement("degrees")
+        carreraElement.AppendChild(degreesElement)
+        For Each degree As String In Me._degrees
+            AddXmlElement(xmlDoc, degreesElement, "degree", degree)
+        Next
 
-            .WriteStartElement("code")
-            .WriteString(Me._code)
-            .WriteEndElement()
+        ' Agrega los semestres y cursos
+        Dim semestersElement As XmlElement = xmlDoc.CreateElement("semesters")
+        carreraElement.AppendChild(semestersElement)
+        For i As Integer = 1 To 6
+            Dim semesterElement As XmlElement = xmlDoc.CreateElement("semester")
+            semesterElement.SetAttribute("number", i.ToString())
+            semestersElement.AppendChild(semesterElement)
 
+            Dim coursesElement As XmlElement = xmlDoc.CreateElement("courses")
+            semesterElement.AppendChild(coursesElement)
 
-            .WriteStartElement("name")
-            .WriteString(Me._name)
-            .WriteEndElement()
+            For Each course As Curso In Me._courses
+                If course.Semester = i Then
+                    Dim courseElement As XmlElement = xmlDoc.CreateElement("course")
+                    coursesElement.AppendChild(courseElement)
 
+                    AddXmlElement(xmlDoc, courseElement, "code", course.Code)
+                    AddXmlElement(xmlDoc, courseElement, "name", course.Name)
+                    AddXmlElement(xmlDoc, courseElement, "amountCredits", course.AmountCredits.ToString())
+                    AddXmlElement(xmlDoc, courseElement, "minimumNote", course.MinimumNote.ToString())
+                    AddXmlElement(xmlDoc, courseElement, "minimumNumberStudents", course.MinimumNumberStudents.ToString())
+                    AddXmlElement(xmlDoc, courseElement, "maxNumberStudents", course.MaxNumberStudents.ToString())
 
-            .WriteStartElement("active")
-            .WriteString(Me._active)
-            .WriteEndElement()
+                    Dim courseDegreesElement As XmlElement = xmlDoc.CreateElement("degrees")
+                    courseElement.AppendChild(courseDegreesElement)
+                    For Each degree As String In course.Degrees
+                        AddXmlElement(xmlDoc, courseDegreesElement, "degree", degree)
+                    Next
 
-            .WriteStartElement("degrees")
-            For Each degree As String In Me._degrees
-                .WriteStartElement("degree")
-                .WriteString(degree)
-                .WriteEndElement()
+                    AddXmlElement(xmlDoc, courseElement, "state", course.State.ToString())
+                    AddXmlElement(xmlDoc, courseElement, "courseCost", course.CourseCost.ToString())
+                End If
             Next
-            .WriteEndElement()
+        Next
 
+        ' Guarda el documento XML en el archivo
+        xmlDoc.Save(route)
+    End Sub
 
-            .WriteStartElement("semesters")
-            'Recorremos 6 semestres
-            For i As Integer = 1 To 6
-                .WriteStartElement("semester")
-                'Le agregamos como atributo el numero de semestre
-                .WriteAttributeString("number", i.ToString())
-                .WriteStartElement("courses")
-
-                For Each course As Curso In Me._courses
-                    'Si el curso tiene el semestre correspondiente(i) agregalo si no continue
-                    If course.Semester = i Then
-
-                        .WriteStartElement("course")
-
-                        .WriteStartElement("code")
-                        .WriteString(course.Code)
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "Name"
-                        .WriteStartElement("name")
-                        .WriteString(course.Name)
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "AmountCredits"
-                        .WriteStartElement("amountCredits")
-                        .WriteString(course.AmountCredits.ToString())
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "MinimumNote"
-                        .WriteStartElement("minimumNote")
-                        .WriteString(course.MinimumNote.ToString())
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "MinimumNumberStudents"
-                        .WriteStartElement("minimumNumberStudents")
-                        .WriteString(course.MinimumNumberStudents.ToString())
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "MaxNumberStudents"
-                        .WriteStartElement("maxNumberStudents")
-                        .WriteString(course.MaxNumberStudents.ToString())
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "Degrees"
-                        .WriteStartElement("degrees")
-                        For Each degree As String In course.Degrees
-                            .WriteStartElement("degree")
-                            .WriteString(degree)
-                            .WriteEndElement()
-                        Next
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "State"
-                        .WriteStartElement("state")
-                        .WriteString(course.State.ToString())
-                        .WriteEndElement()
-
-                        ' Escribir el atributo "CourseCost"
-                        .WriteStartElement("courseCost")
-                        .WriteString(course.CourseCost.ToString())
-                        .WriteEndElement()
-
-                        .WriteEndElement()
-                    Else
-                        Continue For
-                    End If
-                Next
-                .WriteEndElement()
-                .WriteEndElement()
-
-            Next
-            .WriteEndElement()
-            .WriteEndElement()
-            .WriteEndElement()
-
-            'confirma el xml
-            .Flush()
-
-            'Graba en la ruta indicada
-            Dim iData As New Datos.ArchivosXML
-           iData.Grabar(route, stmData)
-
-            'cerramos el xml
-            .Close()
-        End With
-        File.WriteAllBytes(route, stmData.ToArray())
-
+    Private Sub AddXmlElement(xmlDoc As XmlDocument, parentElement As XmlElement, elementName As String, elementValue As String)
+        Dim element As XmlElement = xmlDoc.CreateElement(elementName)
+        element.InnerText = elementValue
+        parentElement.AppendChild(element)
     End Sub
 
     Private Function AddCarreraXML(rout As String)

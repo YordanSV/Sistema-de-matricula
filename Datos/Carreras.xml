@@ -1,10 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<carrers>
-</carrers>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <carrers>
   <carrer>
     <code>TI</code>
-    <name>Tecnologias de informacion</name>
+    <name>Tecnologías de Información</name>
     <active>True</active>
     <degrees>
       <degree>Bachillerato</degree>
@@ -12,20 +10,14 @@
     </degrees>
     <semesters>
       <semester number="1">
-        <courses />
-      </semester>
-      <semester number="2">
-        <courses />
-      </semester>
-      <semester number="3">
         <courses>
           <course>
-            <code>12</code>
-            <name>matematica</name>
+            <code>TI001</code>
+            <name>Introducción a la Programación</name>
             <amountCredits>3</amountCredits>
-            <minimumNote>60</minimumNote>
+            <minimumNote>70</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
-            <maxNumberStudents>15</maxNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
             <degrees>
               <degree>Bachillerato</degree>
               <degree>Maestria</degree>
@@ -33,16 +25,26 @@
             <state>True</state>
             <courseCost>10000</courseCost>
           </course>
-        </courses>
-      </semester>
-      <semester number="4">
-        <courses>
           <course>
-            <code>12</code>
-            <name>ciencias</name>
+            <code>TI002</code>
+            <name>Bases de Datos</name>
             <amountCredits>3</amountCredits>
-            <minimumNote>65</minimumNote>
-            <minimumNumberStudents>15</minimumNumberStudents>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>TI003</code>
+            <name>Redes de Computadoras</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
             <maxNumberStudents>20</maxNumberStudents>
             <degrees>
               <degree>Bachillerato</degree>
@@ -53,15 +55,284 @@
           </course>
         </courses>
       </semester>
+      <semester number="2">
+        <courses>
+          <course>
+            <code>TI004</code>
+            <name>Programación Avanzada</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI005</code>
+            <name>Seguridad Informática</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI006</code>
+            <name>Big Data Analytics</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <code>TI007</code>
+            <name>Desarrollo Web</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI008</code>
+            <name>Inteligencia Artificial</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI009</code>
+            <name>Análisis de Datos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses>
+          <course>
+            <code>TI010</code>
+            <name>Desarrollo de Aplicaciones Móviles</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI011</code>
+            <name>Criptografía</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI012</code>
+            <name>Data Science</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
       <semester number="5">
         <courses>
           <course>
-            <code>12</code>
-            <name>matematica</name>
+            <code>TI013</code>
+            <name>Desarrollo de Software</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI014</code>
+            <name>Seguridad en Redes</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI015</code>
+            <name>Análisis de Big Data</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="6">
+        <courses>
+          <course>
+            <code>TI016</code>
+            <name>Desarrollo de Sistemas Distribuidos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI017</code>
+            <name>Seguridad en la Nube</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>TI018</code>
+            <name>Análisis de Datos Avanzado</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+    </semesters>
+  </carrer>
+  <carrer>
+    <code>ENF</code>
+    <name>Enfermería</name>
+    <active>True</active>
+    <degrees>
+      <degree>Bachillerato</degree>
+      <degree>Maestria</degree>
+    </degrees>
+    <semesters>
+      <semester number="1">
+        <courses>
+          <course>
+            <code>ENF001</code>
+            <name>Anatomía Humana</name>
             <amountCredits>3</amountCredits>
             <minimumNote>70</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
-            <maxNumberStudents>15</maxNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>ENF002</code>
+            <name>Farmacología</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>ENF003</code>
+            <name>Primeros Auxilios</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
             <degrees>
               <degree>Bachillerato</degree>
               <degree>Maestria</degree>
@@ -71,8 +342,1096 @@
           </course>
         </courses>
       </semester>
+      <semester number="2">
+        <courses>
+          <course>
+            <code>ENF004</code>
+            <name>Enfermería en Salud Mental</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF005</code>
+            <name>Enfermería Pediátrica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF006</code>
+            <name>Enfermería Geriátrica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <code>ENF007</code>
+            <name>Enfermería Materno-Infantil</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF008</code>
+            <name>Enfermería Comunitaria</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF009</code>
+            <name>Ética y Legislación en Enfermería</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses>
+          <course>
+            <code>ENF010</code>
+            <name>Enfermería en Cuidados Críticos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF011</code>
+            <name>Enfermería Oncológica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF012</code>
+            <name>Enfermería en Salud Pública</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="5">
+        <courses>
+          <course>
+            <code>ENF013</code>
+            <name>Enfermería en Urgencias</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF014</code>
+            <name>Enfermería Quirúrgica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF015</code>
+            <name>Investigación en Enfermería</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
       <semester number="6">
-        <courses />
+        <courses>
+          <course>
+            <code>ENF016</code>
+            <name>Gestión en Enfermería</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF017</code>
+            <name>Enfermería Familiar y Comunitaria</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ENF018</code>
+            <name>Enfermería en Cuidados Paliativos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+    </semesters>
+  </carrer>
+  <carrer>
+    <code>MED</code>
+    <name>Medicina General</name>
+    <active>True</active>
+    <degrees>
+      <degree>Bachillerato</degree>
+      <degree>Maestria</degree>
+    </degrees>
+    <semesters>
+      <semester number="1">
+        <courses>
+          <course>
+            <code>MED001</code>
+            <name>Anatomía Humana</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>MED002</code>
+            <name>Fisiología Humana</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>MED003</code>
+            <name>Bioquímica</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="2">
+        <courses>
+          <course>
+            <code>MED004</code>
+            <name>Farmacología</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED005</code>
+            <name>Microbiología</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED006</code>
+            <name>Histología</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <code>MED007</code>
+            <name>Patología General</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED008</code>
+            <name>Semiología Médica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED009</code>
+            <name>Bioética</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses>
+          <course>
+            <code>MED010</code>
+            <name>Medicina Interna</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED011</code>
+            <name>Pediatría</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED012</code>
+            <name>Ginecología y Obstetricia</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="5">
+        <courses>
+          <course>
+            <code>MED013</code>
+            <name>Cirugía General</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED014</code>
+            <name>Psiquiatría</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED015</code>
+            <name>Medicina Preventiva</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="6">
+        <courses>
+          <course>
+            <code>MED016</code>
+            <name>Radiología</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED017</code>
+            <name>Dermatología</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>MED018</code>
+            <name>Medicina Legal</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+    </semesters>
+  </carrer>
+  <carrer>
+    <code>ADM</code>
+    <name>Administración de Empresas</name>
+    <active>True</active>
+    <degrees>
+      <degree>Bachillerato</degree>
+      <degree>Maestria</degree>
+    </degrees>
+    <semesters>
+      <semester number="1">
+        <courses>
+          <course>
+            <code>ADM001</code>
+            <name>Introducción a la Administración</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>ADM002</code>
+            <name>Contabilidad Financiera</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>ADM003</code>
+            <name>Economía</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="2">
+        <courses>
+          <course>
+            <code>ADM004</code>
+            <name>Administración de Recursos Humanos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM005</code>
+            <name>Finanzas Corporativas</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM006</code>
+            <name>Gestión de Proyectos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <code>ADM007</code>
+            <name>Administración Pública</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM008</code>
+            <name>Mercadotecnia</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM009</code>
+            <name>Evaluación deProyectos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses>
+          <course>
+            <code>ADM010</code>
+            <name>Administración Estratégica</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM011</code>
+            <name>Finanzas Internacionales</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM012</code>
+            <name>Derecho Empresarial</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="5">
+        <courses>
+          <course>
+            <code>ADM013</code>
+            <name>Gestión de Operaciones</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM014</code>
+            <name>Administración de la Calidad</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM015</code>
+            <name>Finanzas Personales</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="6">
+        <courses>
+          <course>
+            <code>ADM016</code>
+            <name>Emprendimiento</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM017</code>
+            <name>Negocios Internacionales</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>ADM018</code>
+            <name>Ética Empresarial</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+    </semesters>
+  </carrer>
+  <carrer>
+    <code>DER</code>
+    <name>Derecho</name>
+    <active>True</active>
+    <degrees>
+      <degree>Bachillerato</degree>
+      <degree>Maestria</degree>
+    </degrees>
+    <semesters>
+      <semester number="1">
+        <courses>
+          <course>
+            <code>DER001</code>
+            <name>Introducción al Derecho</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>DER002</code>
+            <name>Derecho Civil</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+          <course>
+            <code>DER003</code>
+            <name>Derecho Penal</name>
+            <amountCredits>3</amountCredits>
+            <minimumNote>70</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>10000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="2">
+        <courses>
+          <course>
+            <code>DER004</code>
+            <name>Derecho Administrativo</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER005</code>
+            <name>Derecho Laboral</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER006</code>
+            <name>Derecho Internacional</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="3">
+        <courses>
+          <course>
+            <code>DER007</code>
+            <name>Derecho Mercantil</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER008</code>
+            <name>Derecho Constitucional</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER009</code>
+            <name>Derecho Procesal</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="4">
+        <courses>
+          <course>
+            <code>DER010</code>
+            <name>Derecho de Familia</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER011</code>
+            <name>Derecho Tributario</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER012</code>
+            <name>Derecho Ambiental</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="5">
+        <courses>
+          <course>
+            <code>DER013</code>
+            <name>Derecho de Propiedad Intelectual</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER014</code>
+            <name>Derecho de la Competencia</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER015</code>
+            <name>Derechos Humanos</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
+      </semester>
+      <semester number="6">
+        <courses>
+          <course>
+            <code>DER016</code>
+            <name>Derecho Notarial</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER017</code>
+            <name>Derecho Procesal Penal</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+          <course>
+            <code>DER018</code>
+            <name>Derecho de la Seguridad Social</name>
+            <amountCredits>4</amountCredits>
+            <minimumNote>75</minimumNote>
+            <minimumNumberStudents>10</minimumNumberStudents>
+            <maxNumberStudents>20</maxNumberStudents>
+            <degrees>
+              <degree>Bachillerato</degree>
+              <degree>Maestria</degree>
+            </degrees>
+            <state>True</state>
+            <courseCost>12000</courseCost>
+          </course>
+        </courses>
       </semester>
     </semesters>
   </carrer>

@@ -25,63 +25,39 @@ Public Class Administrador
     End Property
 
     Public Sub Register(route As String)
-        ' Código para registrar el administrador en el archivo XML
-        Dim stmData As New MemoryStream()
+        ' Crea un nuevo documento XML
+        Dim xmlDoc As New XmlDocument()
 
-        Dim xmlAdministrador As New XmlTextWriter(stmData, System.Text.Encoding.UTF8)
+        Try
+            xmlDoc.Load(route)
+        Catch ex As Exception
+            ' Si el archivo no existe o no se puede cargar, crea un nuevo documento
+            Dim declaration As XmlDeclaration = xmlDoc.CreateXmlDeclaration("1.0", "UTF-8", Nothing)
+            xmlDoc.AppendChild(declaration)
 
-        With xmlAdministrador
-            .Formatting = Formatting.Indented  ' Establecer formato automático
+            Dim rootElement As XmlElement = xmlDoc.CreateElement("administradores")
+            xmlDoc.AppendChild(rootElement)
+        End Try
 
-            .WriteStartDocument(True)
+        ' Obtiene la referencia al elemento raíz
+        Dim root As XmlElement = xmlDoc.DocumentElement
 
-            .WriteStartElement("administradores")
+        ' Crea el elemento para el nuevo administrador
+        Dim administradorElement As XmlElement = xmlDoc.CreateElement("administrador")
+        root.AppendChild(administradorElement)
 
-            .WriteStartElement("administrador")
+        AddXmlElement(xmlDoc, administradorElement, "carne", Me.Carne.ToString())
+        AddXmlElement(xmlDoc, administradorElement, "identificacion", Me.Identificacion)
+        AddXmlElement(xmlDoc, administradorElement, "nombreCompleto", Me.NombreCompleto)
+        AddXmlElement(xmlDoc, administradorElement, "telefono", Me.Telefono)
+        AddXmlElement(xmlDoc, administradorElement, "correoElectronico", Me.CorreoElectronico)
+        AddXmlElement(xmlDoc, administradorElement, "fechaNacimiento", Me.FechaNacimiento.ToString())
+        AddXmlElement(xmlDoc, administradorElement, "direccion", Me.Direccion)
+        AddXmlElement(xmlDoc, administradorElement, "contrasena", Me._contrasena)
 
-            .WriteStartElement("carne")
-            .WriteString(Me.Carne.ToString())
-            .WriteEndElement()
-
-            .WriteStartElement("identificacion")
-            .WriteString(Me.Identificacion)
-            .WriteEndElement()
-
-            .WriteStartElement("nombreCompleto")
-            .WriteString(Me.NombreCompleto)
-            .WriteEndElement()
-
-            .WriteStartElement("telefono")
-            .WriteString(Me.Telefono)
-            .WriteEndElement()
-
-            .WriteStartElement("correoElectronico")
-            .WriteString(Me.CorreoElectronico)
-            .WriteEndElement()
-
-            .WriteStartElement("fechaNacimiento")
-            .WriteString(Me.FechaNacimiento.ToString("yyyy-MM-dd"))
-            .WriteEndElement()
-
-            .WriteStartElement("direccion")
-            .WriteString(Me.Direccion)
-            .WriteEndElement()
-
-            .WriteStartElement("contrasena")
-            .WriteString(Me.Contrasena)
-            .WriteEndElement()
-
-            .WriteEndElement()
-            .WriteEndElement()
-            .WriteEndElement()
-
-            .Flush()
-
-            ' Graba en la ruta indicada
-            Dim iData As New Datos.ArchivosXML
-            iData.Grabar(route, stmData)
-
-            .Close()
-        End With
+        ' Guarda el documento XML en el archivo
+        xmlDoc.Save(route)
     End Sub
+
+
 End Class

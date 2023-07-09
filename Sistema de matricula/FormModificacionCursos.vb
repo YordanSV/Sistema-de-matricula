@@ -1,7 +1,7 @@
 ﻿Imports System.Xml
 
 Public Class FormModificacionCursos
-    Private xmlFilePath As String = "C:\Users\Usuario\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml"
+    Private xmlFilePath As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
     Private xmlDoc As New XmlDocument()
 
     Private Sub FormModificacionCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load

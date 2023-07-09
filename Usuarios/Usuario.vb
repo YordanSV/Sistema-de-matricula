@@ -1,4 +1,6 @@
-﻿Public Class Usuario
+﻿Imports System.Xml
+
+Public Class Usuario
     Protected _carne As Integer
     Protected _identificacion As String
     Protected _nombreCompleto As String
@@ -79,4 +81,10 @@
             _direccion = value
         End Set
     End Property
+
+    Public Sub AddXmlElement(xmlDoc As XmlDocument, parentElement As XmlElement, elementName As String, elementValue As String)
+        Dim element As XmlElement = xmlDoc.CreateElement(elementName)
+        element.InnerText = elementValue
+        parentElement.AppendChild(element)
+    End Sub
 End Class

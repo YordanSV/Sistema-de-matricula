@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<administradores>
+  <administrador>
+    <carne>204944</carne>
+    <identificacion>207920892</identificacion>
+    <nombreCompleto>Yordan Salazar</nombreCompleto>
+    <telefono>3545334</telefono>
+    <correoElectronico>yordan@</correoElectronico>
+    <fechaNacimiento>4/2/2003 00:00:00</fechaNacimiento>
+    <direccion>estadio fello</direccion>
+    <contrasena>holamundo</contrasena>
+  </administrador>
+  <administrador>
+    <carne>354546</carne>
+    <identificacion>43543545</identificacion>
+    <nombreCompleto>Danilo Salazar</nombreCompleto>
+    <telefono>3545334</telefono>
+    <correoElectronico>danilo@</correoElectronico>
+    <fechaNacimiento>4/2/2001 00:00:00</fechaNacimiento>
+    <direccion>parque</direccion>
+    <contrasena>holamundo</contrasena>
+  </administrador>
+  <administrador>
+    <carne>996465</carne>
+    <identificacion>67767676</identificacion>
+    <nombreCompleto>Andrey Guzman</nombreCompleto>
+    <telefono>3545334</telefono>
+    <correoElectronico>andrey@</correoElectronico>
+    <fechaNacimiento>4/10/2004 00:00:00</fechaNacimiento>
+    <direccion>estadio fello</direccion>
+    <contrasena>holamundo</contrasena>
+  </administrador>
+</administradores>

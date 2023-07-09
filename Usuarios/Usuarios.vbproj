@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Carreras\Carreras.vbproj" />
     <ProjectReference Include="..\Datos\Datos.vbproj" />
   </ItemGroup>
 
