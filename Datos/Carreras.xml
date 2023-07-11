@@ -13,7 +13,7 @@
         <courses>
           <course>
             <code>TI001</code>
-            <name>Introducción a la Programación</name>
+            <name>efreffre a la Programación</name>
             <amountCredits>3</amountCredits>
             <minimumNote>70</minimumNote>
             <minimumNumberStudents>10</minimumNumberStudents>
@@ -50,7 +50,7 @@
               <degree>Bachillerato</degree>
               <degree>Maestria</degree>
             </degrees>
-            <state>True</state>
+            <state>False</state>
             <courseCost>10000</courseCost>
           </course>
         </courses>
@@ -96,7 +96,7 @@
               <degree>Bachillerato</degree>
               <degree>Maestria</degree>
             </degrees>
-            <state>True</state>
+            <state>False</state>
             <courseCost>12000</courseCost>
           </course>
         </courses>
@@ -142,7 +142,7 @@
               <degree>Bachillerato</degree>
               <degree>Maestria</degree>
             </degrees>
-            <state>True</state>
+            <state>False</state>
             <courseCost>12000</courseCost>
           </course>
         </courses>

@@ -1,22 +1,38 @@
 ﻿Imports System.Xml
 
 Public Class FormModificacionCursos
-    Private xmlFilePath As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
+    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
     Private xmlDoc As New XmlDocument()
 
     Private Sub FormModificacionCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Cargar el archivo XML
-        xmlDoc.Load(xmlFilePath)
+        xmlDoc.Load(route)
 
         ' Mostrar los datos en el DataGridView
+        cmbNumSemester.Items.Add("1")
+        cmbNumSemester.Items.Add("2")
+        cmbNumSemester.Items.Add("3")
+        cmbNumSemester.Items.Add("4")
+        cmbNumSemester.Items.Add("5")
+        cmbNumSemester.Items.Add("6")
+
+        cmbCarreraCode.Items.Add("TI")
+        cmbCarreraCode.Items.Add("ENF")
+        cmbCarreraCode.Items.Add("MED")
+        cmbCarreraCode.Items.Add("ADM")
+        cmbCarreraCode.Items.Add("DER")
+
+        cmbActive.Items.Add("True")
+        cmbActive.Items.Add("False")
+
         MostrarDatosEnDataGridView()
     End Sub
 
     Private Sub MostrarDatosEnDataGridView()
-        Dim cursosNode As XmlNode = xmlDoc.SelectSingleNode("/carrers/carrer/semesters")
-        Dim semesters As XmlNodeList = cursosNode.ChildNodes
+        Dim carrersNode As XmlNodeList = xmlDoc.SelectNodes("/carrers/carrer")
 
         ' Configurar las columnas del DataGridView
+        TablaCursos.Columns.Add("code", "Codigo de Carrera")
         TablaCursos.Columns.Add("Semester", "Semestre")
         TablaCursos.Columns.Add("CourseCode", "Código del curso")
         TablaCursos.Columns.Add("CourseName", "Nombre del curso")
@@ -29,113 +45,141 @@ Public Class FormModificacionCursos
         TablaCursos.Columns.Add("CourseCost", "Costo del curso")
 
         ' Agregar filas al DataGridView con los datos del XML
-        For Each semester As XmlNode In semesters
-            Dim semesterNumber As String = semester.Attributes("number").Value
+        For Each carrer As XmlNode In carrersNode
+            Dim carrerCode As String = carrer.SelectSingleNode("code").InnerText
 
-            For Each course As XmlNode In semester.SelectSingleNode("courses").ChildNodes
-                Dim courseCode As String = course.SelectSingleNode("code").InnerText
-                Dim courseName As String = course.SelectSingleNode("name").InnerText
-                Dim credits As String = course.SelectSingleNode("amountCredits").InnerText
-                Dim minNote As String = course.SelectSingleNode("minimumNote").InnerText
-                Dim minStudents As String = course.SelectSingleNode("minimumNumberStudents").InnerText
-                Dim maxStudents As String = course.SelectSingleNode("maxNumberStudents").InnerText
-                Dim degrees As String = String.Join(", ", course.SelectNodes("degrees/degree").Cast(Of XmlNode)().Select(Function(d) d.InnerText))
-                Dim active As String = course.SelectSingleNode("state").InnerText
-                Dim courseCost As String = course.SelectSingleNode("courseCost").InnerText
+            Dim cursosNode As XmlNode = carrer.SelectSingleNode("semesters")
+            Dim semesters As XmlNodeList = cursosNode.ChildNodes
 
-                TablaCursos.Rows.Add(semesterNumber, courseCode, courseName, credits, minNote, minStudents, maxStudents, degrees, active, courseCost)
+            For Each semester As XmlNode In semesters
+                Dim semesterNumber As String = semester.Attributes("number").Value
+
+                For Each course As XmlNode In semester.SelectSingleNode("courses").ChildNodes
+                    Dim courseCode As String = course.SelectSingleNode("code").InnerText
+                    Dim courseName As String = course.SelectSingleNode("name").InnerText
+                    Dim credits As String = course.SelectSingleNode("amountCredits").InnerText
+                    Dim minNote As String = course.SelectSingleNode("minimumNote").InnerText
+                    Dim minStudents As String = course.SelectSingleNode("minimumNumberStudents").InnerText
+                    Dim maxStudents As String = course.SelectSingleNode("maxNumberStudents").InnerText
+                    Dim degrees As String = String.Join(", ", course.SelectNodes("degrees/degree").Cast(Of XmlNode)().Select(Function(d) d.InnerText))
+                    Dim active As String = course.SelectSingleNode("state").InnerText
+                    Dim courseCost As String = course.SelectSingleNode("courseCost").InnerText
+
+                    TablaCursos.Rows.Add(carrerCode, semesterNumber, courseCode, courseName, credits, minNote, minStudents, maxStudents, degrees, active, courseCost)
+                Next
             Next
         Next
     End Sub
 
-    Private Sub GuardarCambios()
+    Private Sub GuardarCambios(codeCarrer As String, numSemester As String)
         ' Actualizar los datos modificados en el DataGridView al archivo XML
-        Dim cursosNode As XmlNode = xmlDoc.SelectSingleNode("/carrers/carrer/semesters")
+
+
+        Dim cursosNode As XmlNode = xmlDoc.SelectSingleNode("/carrers/carrer[code='" & codeCarrer & "']/semesters")
         Dim semesters As XmlNodeList = cursosNode.ChildNodes
 
-        ' Eliminar los cursos existentes en el XML
+        ' Eliminar los cursos existentes en el XML del semestre correspondiente
         For Each semester As XmlNode In semesters
             semester.SelectSingleNode("courses").RemoveAll()
         Next
 
-        ' Agregar los cursos desde el DataGridView al XML
-        For Each row As DataGridViewRow In TablaCursos.Rows
-            If Not row.IsNewRow Then
-                Dim semesterCellValue As Object = row.Cells("Semester").Value
-                Dim semesterNumber As String = If(semesterCellValue IsNot Nothing, semesterCellValue.ToString(), "")
-                Dim courseCode As String = row.Cells("CourseCode").Value.ToString()
-                Dim courseName As String = row.Cells("CourseName").Value.ToString()
-                Dim credits As String = row.Cells("Credits").Value.ToString()
-                Dim minNote As String = row.Cells("MinNote").Value.ToString()
-                Dim minStudents As String = row.Cells("MinStudents").Value.ToString()
-                Dim maxStudents As String = row.Cells("MaxStudents").Value.ToString()
-                Dim degrees As String = row.Cells("Degrees").Value.ToString()
-                Dim active As String = row.Cells("Active").Value.ToString()
-                Dim courseCost As String = row.Cells("CourseCost").Value.ToString()
+        Dim semesterNumber As Integer = numSemester ' Obtener el número de semestre seleccionado
 
-                Dim semesterNode As XmlNode = semesters.Item(Int32.Parse(semesterNumber) - 1)
-                Dim coursesNode As XmlNode = semesterNode.SelectSingleNode("courses")
+        For i As Integer = 1 To 6
 
-                Dim newCourse As XmlNode = xmlDoc.CreateElement("course")
+            Dim semesterNode As XmlNode = semesters.Item(i - 1)
+            Dim coursesNode As XmlNode = semesterNode.SelectSingleNode("courses")
 
-                Dim codeNode As XmlNode = xmlDoc.CreateElement("code")
-                codeNode.InnerText = courseCode
-                newCourse.AppendChild(codeNode)
 
-                Dim nameNode As XmlNode = xmlDoc.CreateElement("name")
-                nameNode.InnerText = courseName
-                newCourse.AppendChild(nameNode)
+            For Each row As DataGridViewRow In TablaCursos.Rows
+                If Not row.IsNewRow Then
+                    If codeCarrer = row.Cells("code").Value.ToString() And row.Cells("Semester").Value = i Then
+                        Dim courseCode As String = row.Cells("CourseCode").Value.ToString()
+                        Dim courseName As String = row.Cells("CourseName").Value.ToString()
+                        Dim credits As String = row.Cells("Credits").Value.ToString()
+                        Dim minNote As String = row.Cells("MinNote").Value.ToString()
+                        Dim minStudents As String = row.Cells("MinStudents").Value.ToString()
+                        Dim maxStudents As String = row.Cells("MaxStudents").Value.ToString()
+                        Dim degrees As String = row.Cells("Degrees").Value.ToString()
+                        Dim active As String = row.Cells("Active").Value.ToString()
+                        Dim courseCost As String = row.Cells("CourseCost").Value.ToString()
 
-                Dim creditsNode As XmlNode = xmlDoc.CreateElement("amountCredits")
-                creditsNode.InnerText = credits
-                newCourse.AppendChild(creditsNode)
+                        Dim newCourse As XmlNode = xmlDoc.CreateElement("course")
 
-                Dim minNoteNode As XmlNode = xmlDoc.CreateElement("minimumNote")
-                minNoteNode.InnerText = minNote
-                newCourse.AppendChild(minNoteNode)
+                        Dim codeNode As XmlNode = xmlDoc.CreateElement("code")
+                        codeNode.InnerText = courseCode
+                        newCourse.AppendChild(codeNode)
 
-                Dim minStudentsNode As XmlNode = xmlDoc.CreateElement("minimumNumberStudents")
-                minStudentsNode.InnerText = minStudents
-                newCourse.AppendChild(minStudentsNode)
+                        Dim nameNode As XmlNode = xmlDoc.CreateElement("name")
+                        nameNode.InnerText = courseName
+                        newCourse.AppendChild(nameNode)
 
-                Dim maxStudentsNode As XmlNode = xmlDoc.CreateElement("maxNumberStudents")
-                maxStudentsNode.InnerText = maxStudents
-                newCourse.AppendChild(maxStudentsNode)
+                        Dim creditsNode As XmlNode = xmlDoc.CreateElement("amountCredits")
+                        creditsNode.InnerText = credits
+                        newCourse.AppendChild(creditsNode)
 
-                Dim degreesNode As XmlNode = xmlDoc.CreateElement("degrees")
-                degreesNode.InnerText = degrees
-                newCourse.AppendChild(degreesNode)
+                        Dim minNoteNode As XmlNode = xmlDoc.CreateElement("minimumNote")
+                        minNoteNode.InnerText = minNote
+                        newCourse.AppendChild(minNoteNode)
 
-                Dim activeNode As XmlNode = xmlDoc.CreateElement("State")
-                activeNode.InnerText = active
-                newCourse.AppendChild(activeNode)
+                        Dim minStudentsNode As XmlNode = xmlDoc.CreateElement("minimumNumberStudents")
+                        minStudentsNode.InnerText = minStudents
+                        newCourse.AppendChild(minStudentsNode)
 
-                Dim courseCostNode As XmlNode = xmlDoc.CreateElement("courseCost")
-                courseCostNode.InnerText = courseCost
-                newCourse.AppendChild(courseCostNode)
+                        Dim maxStudentsNode As XmlNode = xmlDoc.CreateElement("maxNumberStudents")
+                        maxStudentsNode.InnerText = maxStudents
+                        newCourse.AppendChild(maxStudentsNode)
 
-                coursesNode.AppendChild(newCourse)
-            End If
+                        Dim degreesNode As XmlNode = xmlDoc.CreateElement("degrees")
+                        degreesNode.InnerText = degrees
+                        newCourse.AppendChild(degreesNode)
+
+                        Dim activeNode As XmlNode = xmlDoc.CreateElement("state")
+                        activeNode.InnerText = active
+                        newCourse.AppendChild(activeNode)
+
+                        Dim courseCostNode As XmlNode = xmlDoc.CreateElement("courseCost")
+                        courseCostNode.InnerText = courseCost
+                        newCourse.AppendChild(courseCostNode)
+
+                        coursesNode.AppendChild(newCourse)
+                    End If
+
+                End If
+            Next
         Next
 
         ' Guardar los cambios en el archivo XML
-        xmlDoc.Save(xmlFilePath)
+        xmlDoc.Save(route)
     End Sub
 
 
 
 
+
+
+    Public Sub AddXmlElement(xmlDoc As XmlDocument, parentElement As XmlElement, elementName As String, elementValue As String)
+        Dim element As XmlElement = xmlDoc.CreateElement(elementName)
+        element.InnerText = elementValue
+        parentElement.AppendChild(element)
+    End Sub
+
     Private Sub TablaCursos_CellEndEdit(sender As Object, e As DataGridViewCellEventArgs) Handles TablaCursos.CellEndEdit
-        ' Llamar al método GuardarCambios cuando se finaliza la edición de una celda en el DataGridView
-        GuardarCambios()
+        Dim rowIndex As Integer = e.RowIndex
+        Dim codeCarrer As String = TablaCursos.Rows(rowIndex).Cells(0).Value.ToString()
+        Dim numSemester As String = TablaCursos.Rows(rowIndex).Cells(1).Value.ToString()
+        GuardarCambios(codeCarrer, numSemester) 'Guardamos el xml
+        TablaCursos.Rows.Clear() ' Borra todas las filas 
+        TablaCursos.Columns.Clear() ' Borra todas las columnas 
+        MostrarDatosEnDataGridView() 'La creamos de nuevo actualizada
     End Sub
 
     Private Sub btnRegistrarCurso_Click(sender As Object, e As EventArgs) Handles btnRegistrarCurso.Click
         ' Obtener el código de la carrera
-        Dim carreraCode As String = txtCarreraCode.Text
+        Dim carreraCode As String = cmbCarreraCode.Text
 
         ' Obtener los datos de entrada del usuario
-        Dim semester As String = cmbSemester.Text
+        Dim semester As String = cmbNumSemester.Text
         Dim courseCode As String = txtCourseCode.Text
         Dim courseName As String = txtCourseName.Text
         Dim credits As String = txtCredits.Text
@@ -149,7 +193,7 @@ Public Class FormModificacionCursos
 
         ' Agregar los datos al DataGridView
         Dim newRow As DataGridViewRow = New DataGridViewRow()
-        newRow.CreateCells(TablaCursos, semester, courseCode, courseName, credits, minNote, minStudents, maxStudents, degrees, active, courseCost)
+        newRow.CreateCells(TablaCursos, carreraCode, semester, courseCode, courseName, credits, minNote, minStudents, maxStudents, degrees, active, courseCost)
         TablaCursos.Rows.Add(newRow)
 
         ' Agregar los datos al archivo XML
@@ -210,14 +254,14 @@ Public Class FormModificacionCursos
         coursesNode.AppendChild(newCourse)
 
         ' Guardar los cambios en el archivo XML
-        xmlDoc.Save(xmlFilePath)
+        xmlDoc.Save(route)
 
         ' Limpiar los campos de entrada
         LimpiarCamposEntrada()
     End Sub
 
     Private Sub LimpiarCamposEntrada()
-        cmbSemester.SelectedIndex = -1
+        cmbNumSemester.SelectedIndex = -1
         txtCourseCode.Text = ""
         txtCourseName.Text = ""
         txtCredits.Text = ""

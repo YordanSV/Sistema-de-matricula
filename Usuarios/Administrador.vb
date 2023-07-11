@@ -3,16 +3,22 @@ Imports System.Collections.Generic
 Imports System.Data
 Imports System.Xml
 Imports System.Windows.Forms.AxHost
+Imports System.CodeDom.Compiler
 
 
 Public Class Administrador
     Inherits Usuario
 
     Private _contrasena As String
+    Private _activo As Boolean
+
+    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
+    Private xmlDoc As New XmlDocument()
 
     Public Sub New(ByVal carne As Integer, ByVal identificacion As String, ByVal nombreCompleto As String, ByVal telefono As String, ByVal correoElectronico As String, ByVal fechaNacimiento As DateTime, ByVal direccion As String, ByVal contrasena As String)
         MyBase.New(carne, identificacion, nombreCompleto, telefono, correoElectronico, fechaNacimiento, direccion)
         _contrasena = contrasena
+        _activo = True
     End Sub
 
     Public Property Contrasena As String
@@ -46,7 +52,7 @@ Public Class Administrador
         Dim administradorElement As XmlElement = xmlDoc.CreateElement("administrador")
         root.AppendChild(administradorElement)
 
-        AddXmlElement(xmlDoc, administradorElement, "carne", Me.Carne.ToString())
+        AddXmlElement(xmlDoc, administradorElement, "carnet", Me.Carne.ToString())
         AddXmlElement(xmlDoc, administradorElement, "identificacion", Me.Identificacion)
         AddXmlElement(xmlDoc, administradorElement, "nombreCompleto", Me.NombreCompleto)
         AddXmlElement(xmlDoc, administradorElement, "telefono", Me.Telefono)
@@ -54,6 +60,7 @@ Public Class Administrador
         AddXmlElement(xmlDoc, administradorElement, "fechaNacimiento", Me.FechaNacimiento.ToString())
         AddXmlElement(xmlDoc, administradorElement, "direccion", Me.Direccion)
         AddXmlElement(xmlDoc, administradorElement, "contrasena", Me._contrasena)
+        AddXmlElement(xmlDoc, administradorElement, "activo", Me._activo)
 
         ' Guarda el documento XML en el archivo
         xmlDoc.Save(route)

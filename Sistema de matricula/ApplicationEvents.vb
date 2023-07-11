@@ -32,6 +32,7 @@ Namespace My
 
 
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
+
             Dim grados1 As New List(Of String) From {"Bachillerato"}
             Dim grados2 As New List(Of String) From {"Bachillerato", "Maestria"}
             Dim grados3 As New List(Of String) From {"Bachillerato", "Maestria", "Doctorado"}
@@ -41,15 +42,15 @@ Namespace My
 
 
             Dim cursosTI As New List(Of Carreras.Curso) From {
-                New Carreras.Curso("TI001", 1, "Introducción a la Programación", 3, 70, 10, 20, grados2, "True", 10000),
+                New Carreras.Curso("TI001", 1, "efreffre a la Programación", 3, 70, 10, 20, grados2, "True", 10000),
                 New Carreras.Curso("TI002", 1, "Bases de Datos", 3, 70, 10, 20, grados2, "True", 10000),
-                New Carreras.Curso("TI003", 1, "Redes de Computadoras", 3, 70, 10, 20, grados2, "True", 10000),
+                New Carreras.Curso("TI003", 1, "Redes de Computadoras", 3, 70, 10, 20, grados2, "False", 10000),
                 New Carreras.Curso("TI004", 2, "Programación Avanzada", 4, 75, 10, 20, grados2, "True", 12000),
                 New Carreras.Curso("TI005", 2, "Seguridad Informática", 4, 75, 10, 20, grados2, "True", 12000),
-                New Carreras.Curso("TI006", 2, "Big Data Analytics", 4, 75, 10, 20, grados2, "True", 12000),
+                New Carreras.Curso("TI006", 2, "Big Data Analytics", 4, 75, 10, 20, grados2, "False", 12000),
                 New Carreras.Curso("TI007", 3, "Desarrollo Web", 4, 75, 10, 20, grados2, "True", 12000),
                 New Carreras.Curso("TI008", 3, "Inteligencia Artificial", 4, 75, 10, 20, grados2, "True", 12000),
-                New Carreras.Curso("TI009", 3, "Análisis de Datos", 4, 75, 10, 20, grados2, "True", 12000),
+                New Carreras.Curso("TI009", 3, "Análisis de Datos", 4, 75, 10, 20, grados2, "False", 12000),
                 New Carreras.Curso("TI010", 4, "Desarrollo de Aplicaciones Móviles", 4, 75, 10, 20, grados2, "True", 12000),
                 New Carreras.Curso("TI011", 4, "Criptografía", 4, 75, 10, 20, grados2, "True", 12000),
                 New Carreras.Curso("TI012", 4, "Data Science", 4, 75, 10, 20, grados2, "True", 12000),

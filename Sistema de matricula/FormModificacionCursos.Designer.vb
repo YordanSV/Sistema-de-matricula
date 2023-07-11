@@ -35,9 +35,19 @@ Partial Class FormModificacionCursos
         txtDegrees = New TextBox()
         txtCourseCost = New TextBox()
         BackgroundWorker1 = New ComponentModel.BackgroundWorker()
-        cmbSemester = New ComboBox()
+        cmbNumSemester = New ComboBox()
         cmbActive = New ComboBox()
-        txtCarreraCode = New TextBox()
+        cmbCarreraCode = New ComboBox()
+        Label1 = New Label()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
+        Label5 = New Label()
+        Label6 = New Label()
+        Label7 = New Label()
+        Label8 = New Label()
+        Label9 = New Label()
+        Label10 = New Label()
         CType(TablaCursos, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -71,7 +81,6 @@ Partial Class FormModificacionCursos
         txtCourseCode.Name = "txtCourseCode"
         txtCourseCode.Size = New Size(97, 23)
         txtCourseCode.TabIndex = 3
-        txtCourseCode.Text = "Código"
         ' 
         ' txtCourseName
         ' 
@@ -79,7 +88,6 @@ Partial Class FormModificacionCursos
         txtCourseName.Name = "txtCourseName"
         txtCourseName.Size = New Size(97, 23)
         txtCourseName.TabIndex = 4
-        txtCourseName.Text = "Nombre"
         ' 
         ' txtCredits
         ' 
@@ -87,7 +95,6 @@ Partial Class FormModificacionCursos
         txtCredits.Name = "txtCredits"
         txtCredits.Size = New Size(97, 23)
         txtCredits.TabIndex = 5
-        txtCredits.Text = "Créditos"
         ' 
         ' txtMinNote
         ' 
@@ -95,7 +102,6 @@ Partial Class FormModificacionCursos
         txtMinNote.Name = "txtMinNote"
         txtMinNote.Size = New Size(97, 23)
         txtMinNote.TabIndex = 6
-        txtMinNote.Text = "Min Nota"
         ' 
         ' txtMinStudents
         ' 
@@ -103,7 +109,6 @@ Partial Class FormModificacionCursos
         txtMinStudents.Name = "txtMinStudents"
         txtMinStudents.Size = New Size(97, 23)
         txtMinStudents.TabIndex = 7
-        txtMinStudents.Text = "Min Estudiantes"
         ' 
         ' txtMaxStudents
         ' 
@@ -111,7 +116,6 @@ Partial Class FormModificacionCursos
         txtMaxStudents.Name = "txtMaxStudents"
         txtMaxStudents.Size = New Size(97, 23)
         txtMaxStudents.TabIndex = 8
-        txtMaxStudents.Text = "Max Estudiantes"
         ' 
         ' txtDegrees
         ' 
@@ -119,24 +123,22 @@ Partial Class FormModificacionCursos
         txtDegrees.Name = "txtDegrees"
         txtDegrees.Size = New Size(97, 23)
         txtDegrees.TabIndex = 9
-        txtDegrees.Text = "Grados"
         ' 
         ' txtCourseCost
         ' 
-        txtCourseCost.Location = New Point(955, 77)
+        txtCourseCost.Location = New Point(910, 77)
         txtCourseCost.Name = "txtCourseCost"
-        txtCourseCost.Size = New Size(97, 23)
+        txtCourseCost.Size = New Size(10, 23)
         txtCourseCost.TabIndex = 11
         txtCourseCost.Text = "10000"
         ' 
-        ' cmbSemester
+        ' cmbNumSemester
         ' 
-        cmbSemester.FormattingEnabled = True
-        cmbSemester.Location = New Point(5, 77)
-        cmbSemester.Name = "cmbSemester"
-        cmbSemester.Size = New Size(120, 23)
-        cmbSemester.TabIndex = 12
-        cmbSemester.Text = "Número Semestre"
+        cmbNumSemester.FormattingEnabled = True
+        cmbNumSemester.Location = New Point(12, 77)
+        cmbNumSemester.Name = "cmbNumSemester"
+        cmbNumSemester.Size = New Size(109, 23)
+        cmbNumSemester.TabIndex = 12
         ' 
         ' cmbActive
         ' 
@@ -145,24 +147,123 @@ Partial Class FormModificacionCursos
         cmbActive.Name = "cmbActive"
         cmbActive.Size = New Size(97, 23)
         cmbActive.TabIndex = 13
-        cmbActive.Text = "Estado"
         ' 
-        ' txtCarreraCode
+        ' cmbCarreraCode
         ' 
-        txtCarreraCode.Location = New Point(472, 24)
-        txtCarreraCode.Name = "txtCarreraCode"
-        txtCarreraCode.Size = New Size(112, 23)
-        txtCarreraCode.TabIndex = 14
-        txtCarreraCode.Text = "Código Semestre"
+        cmbCarreraCode.FormattingEnabled = True
+        cmbCarreraCode.Location = New Point(481, 24)
+        cmbCarreraCode.Name = "cmbCarreraCode"
+        cmbCarreraCode.Size = New Size(121, 23)
+        cmbCarreraCode.TabIndex = 14
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(12, 59)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(102, 15)
+        Label1.TabIndex = 15
+        Label1.Text = "Número Semestre"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(153, 59)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(46, 15)
+        Label2.TabIndex = 16
+        Label2.Text = "Código"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(255, 59)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(51, 15)
+        Label3.TabIndex = 17
+        Label3.Text = "Nombre"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(355, 59)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(51, 15)
+        Label4.TabIndex = 18
+        Label4.Text = "Créditos"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(460, 59)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(57, 15)
+        Label5.TabIndex = 19
+        Label5.Text = "Min Nota"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(543, 59)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(91, 15)
+        Label6.TabIndex = 20
+        Label6.Text = "Min Estudiantes"
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(646, 59)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(93, 15)
+        Label7.TabIndex = 21
+        Label7.Text = "Max Estudiantes"
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(775, 59)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(44, 15)
+        Label8.TabIndex = 22
+        Label8.Text = "Grados"
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(878, 59)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(42, 15)
+        Label9.TabIndex = 23
+        Label9.Text = "Estado"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(492, 6)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(101, 15)
+        Label10.TabIndex = 24
+        Label10.Text = "Código de carrera"
         ' 
         ' FormModificacionCursos
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1536, 595)
-        Controls.Add(txtCarreraCode)
+        ClientSize = New Size(1370, 595)
+        Controls.Add(Label10)
+        Controls.Add(Label9)
+        Controls.Add(Label8)
+        Controls.Add(Label7)
+        Controls.Add(Label6)
+        Controls.Add(Label5)
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
+        Controls.Add(Label1)
+        Controls.Add(cmbCarreraCode)
         Controls.Add(cmbActive)
-        Controls.Add(cmbSemester)
+        Controls.Add(cmbNumSemester)
         Controls.Add(txtCourseCost)
         Controls.Add(txtDegrees)
         Controls.Add(txtMaxStudents)
@@ -203,5 +304,16 @@ Partial Class FormModificacionCursos
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents cmbSemester As ComboBox
     Friend WithEvents cmbActive As ComboBox
-    Friend WithEvents txtCarreraCode As TextBox
+    Friend WithEvents cmbNumSemester As ComboBox
+    Friend WithEvents cmbCarreraCode As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class
