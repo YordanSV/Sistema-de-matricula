@@ -1,4 +1,7 @@
-﻿Imports System.IO
+﻿Imports System.CodeDom.Compiler
+Imports System.IO
+Imports System.Text
+Imports System.Xml
 Imports Carreras
 Imports Microsoft.VisualBasic.ApplicationServices
 Imports Microsoft.VisualBasic.Devices
@@ -29,6 +32,7 @@ Namespace My
 
     Partial Friend Class MyApplication
 
+        Dim xmlDoc As New XmlDocument()
 
 
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
@@ -36,13 +40,13 @@ Namespace My
             Dim grados1 As New List(Of String) From {"Bachillerato"}
             Dim grados2 As New List(Of String) From {"Bachillerato", "Maestria"}
             Dim grados3 As New List(Of String) From {"Bachillerato", "Maestria", "Doctorado"}
-            Dim routeCarreras As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
-            Dim routeAdministradores As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
-            Dim routeEstudiantes As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Estudiantes.xml"
+            Dim routeCarreras As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml"
+            Dim routeAdministradores As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
+            Dim routeEstudiantes As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Estudiantes.xml"
 
 
             Dim cursosTI As New List(Of Carreras.Curso) From {
-                New Carreras.Curso("TI001", 1, "efreffre a la Programación", 3, 70, 10, 20, grados2, "True", 10000),
+                New Carreras.Curso("TI001", 1, "Introduccion a la Programación", 3, 70, 10, 20, grados2, "True", 10000),
                 New Carreras.Curso("TI002", 1, "Bases de Datos", 3, 70, 10, 20, grados2, "True", 10000),
                 New Carreras.Curso("TI003", 1, "Redes de Computadoras", 3, 70, 10, 20, grados2, "False", 10000),
                 New Carreras.Curso("TI004", 2, "Programación Avanzada", 4, 75, 10, 20, grados2, "True", 12000),
@@ -163,10 +167,14 @@ Namespace My
 
 
 
-
+            xmlDoc.Load(routeAdministradores)
+            Dim Node As XmlNode = xmlDoc.SelectSingleNode("/administradores")
+            Node.RemoveAll() 'reiniciamos el xml
+            xmlDoc.Save(routeAdministradores)
             Dim Administrador1 As New Administrador(204944, "207920892", "Yordan Salazar", "3545334", "yordan@", "2003-02-04", "estadio fello", "holamundo")
             Dim Administrador2 As New Administrador(354546, "43543545", "Danilo Salazar", "3545334", "danilo@", "2001-02-04", "parque", "holamundo")
             Dim Administrador3 As New Administrador(996465, "67767676", "Andrey Guzman", "3545334", "andrey@", "2004-10-04", "estadio fello", "holamundo")
+
 
             Administrador1.Register(routeAdministradores)
             Administrador2.Register(routeAdministradores)
@@ -188,6 +196,10 @@ Namespace My
             Dim carrerasDeGretel = New List(Of Carreras.Carrera)
             carrerasDeGretel.Add(carreraDerecho)
 
+            xmlDoc.Load(routeEstudiantes)
+            Node = xmlDoc.SelectSingleNode("/estudiantes")
+            Node.RemoveAll() 'reiniciamos el xml
+            xmlDoc.Save(routeEstudiantes)
             Dim estudianteMichael As New Estudiante(204944, "207920892", "Michael Salazar", "3545334", "Michael@", "2003-02-04", "estadio fello", carrerasDeMichael)
             Dim estudianteNataly As New Estudiante(354546, "43543545", "Nataly Salazar", "645454", "Nataly@", "2001-02-04", "parque", carrerasDeNataly)
             Dim estudianteGretel As New Estudiante(996465, "67767676", "Gretel Guzman", "43554", "Gretel@", "2004-10-04", "estadio fello", carrerasDeGretel)
