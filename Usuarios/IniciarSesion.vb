@@ -1,17 +1,28 @@
 ﻿Imports System.Xml
 
 Public Class IniciarSesion
-    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
+    Private route As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
     Private xmlDoc As New XmlDocument()
 
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim administradorNode As XmlNodeList = xmlDoc.SelectNodes("/administradores/administrador")
-        For Each administrador As XmlNode In administradorNode
-            If administrador Is Nothing Then
-                MessageBox.Show("El administrador no existe intente de nuevo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Return
-            End If
+
+        If txtCarnet.Text = "" Or txtContrasena.Text = "" Then
+            MessageBox.Show("Ingrese un valor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+        xmlDoc.Load(route)
+
+        ' Obtener la raíz del documento
+        Dim rootAdministradores As XmlElement = xmlDoc.DocumentElement
+        Dim administradores As XmlNodeList = rootAdministradores.SelectNodes("administrador")
+
+
+
+        Dim totalAdministradores As Integer = administradores.Count
+        Dim contador As Integer = 0
+        For Each administrador As XmlNode In administradores
+
             Dim carnet As String = administrador.SelectSingleNode("carnet").InnerText
             Dim identificacion As String = administrador.SelectSingleNode("identificacion").InnerText
             Dim nombreCompleto As String = administrador.SelectSingleNode("nombreCompleto").InnerText
@@ -22,14 +33,31 @@ Public Class IniciarSesion
             Dim contrasena As String = administrador.SelectSingleNode("contrasena").InnerText
             Dim activo As String = administrador.SelectSingleNode("activo").InnerText
 
-            Dim usuario As Administrador = New Administrador(carnet, identificacion, nombreCompleto, telefono, correoElectronico, fechaNacimiento, direccion, contrasena)
-            If Not Boolean.Parse(activo) Then
-                MessageBox.Show("El administrador se encuantra inactivo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Dim usuario As Administrador = New Administrador(carnet, identificacion, nombreCompleto, telefono, correoElectronico, fechaNacimiento, direccion, contrasena, activo)
+
+
+            If txtCarnet.Text = carnet And txtContrasena.Text <> contrasena Then
+                MessageBox.Show("Contrasena incorrecta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtContrasena.Text = ""
                 Return
-            ElseIf txtCarnet.ToString = carnet And txtContrasena.ToString = contrasena Then
+            ElseIf txtCarnet.Text = carnet And txtContrasena.Text = contrasena Then
+                If Not (Boolean.Parse(activo)) Then
+                    MessageBox.Show("El administrador se encuentra inactivo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Return
+                End If
                 Dim formPrincipal As New Form1()
                 formPrincipal.Show()
             End If
+
+
+            contador += 1
+            If contador = totalAdministradores Then
+                MessageBox.Show("No existe el usuario indicado", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtCarnet.Text = ""
+                txtContrasena.Text = ""
+                Return
+            End If
         Next
+
     End Sub
 End Class

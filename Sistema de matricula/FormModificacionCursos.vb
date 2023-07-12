@@ -78,10 +78,6 @@ Public Class FormModificacionCursos
         Dim cursosNode As XmlNode = xmlDoc.SelectSingleNode("/carrers/carrer[code='" & codeCarrer & "']/semesters")
         Dim semesters As XmlNodeList = cursosNode.ChildNodes
 
-        ' Eliminar los cursos existentes en el XML del semestre correspondiente
-        For Each semester As XmlNode In semesters
-            semester.SelectSingleNode("courses").RemoveAll()
-        Next
 
         Dim semesterNumber As Integer = numSemester ' Obtener el número de semestre seleccionado
 

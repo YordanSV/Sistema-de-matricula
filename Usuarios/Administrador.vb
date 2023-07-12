@@ -12,13 +12,13 @@ Public Class Administrador
     Private _contrasena As String
     Private _activo As Boolean
 
-    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
+    Private route As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
     Private xmlDoc As New XmlDocument()
 
-    Public Sub New(ByVal carne As Integer, ByVal identificacion As String, ByVal nombreCompleto As String, ByVal telefono As String, ByVal correoElectronico As String, ByVal fechaNacimiento As DateTime, ByVal direccion As String, ByVal contrasena As String)
+    Public Sub New(ByVal carne As Integer, ByVal identificacion As String, ByVal nombreCompleto As String, ByVal telefono As String, ByVal correoElectronico As String, ByVal fechaNacimiento As DateTime, ByVal direccion As String, ByVal contrasena As String, activo As Boolean)
         MyBase.New(carne, identificacion, nombreCompleto, telefono, correoElectronico, fechaNacimiento, direccion)
         _contrasena = contrasena
-        _activo = True
+        _activo = activo
     End Sub
 
     Public Property Contrasena As String
