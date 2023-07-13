@@ -1,4 +1,5 @@
 ﻿Imports System.Xml
+Imports Usuarios
 
 Public Class IniciarSesion
     Private route As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
@@ -45,8 +46,9 @@ Public Class IniciarSesion
                     MessageBox.Show("El administrador se encuentra inactivo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Return
                 End If
-                Dim formPrincipal As New Form1()
+                Dim formPrincipal As New Principal()
                 formPrincipal.Show()
+                Return
             End If
 
 
@@ -59,5 +61,10 @@ Public Class IniciarSesion
             End If
         Next
 
+    End Sub
+
+    Private Sub IniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim formPrincipal As New FormModificacionEstudintes()
+        formPrincipal.Show()
     End Sub
 End Class

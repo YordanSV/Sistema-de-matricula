@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <estudiantes>
   <estudiante>
-    <carne>204944</carne>
+    <carnet>204944</carnet>
     <identificacion>207920892</identificacion>
     <nombreCompleto>Michael Salazar</nombreCompleto>
     <telefono>3545334</telefono>
@@ -9,33 +9,28 @@
     <fechaNacimiento>04/02/2003 0:00:00</fechaNacimiento>
     <direccion>estadio fello</direccion>
     <carrerasMatriculadas>
-      <CodigoCarrera>ADM</CodigoCarrera>
-      <CodigoCarrera>TI</CodigoCarrera>
     </carrerasMatriculadas>
   </estudiante>
   <estudiante>
-    <carne>354546</carne>
+    <carnet>354546</carnet>
     <identificacion>43543545</identificacion>
-    <nombreCompleto>Nataly Salazar</nombreCompleto>
+    <nombreCompleto>DSFDFS</nombreCompleto>
     <telefono>645454</telefono>
     <correoElectronico>Nataly@</correoElectronico>
     <fechaNacimiento>04/02/2001 0:00:00</fechaNacimiento>
     <direccion>parque</direccion>
     <carrerasMatriculadas>
-      <CodigoCarrera>ENF</CodigoCarrera>
-      <CodigoCarrera>MED</CodigoCarrera>
     </carrerasMatriculadas>
   </estudiante>
   <estudiante>
-    <carne>996465</carne>
+    <carnet>996465</carnet>
     <identificacion>67767676</identificacion>
     <nombreCompleto>Gretel Guzman</nombreCompleto>
-    <telefono>43554</telefono>
+    <telefono>1234</telefono>
     <correoElectronico>Gretel@</correoElectronico>
     <fechaNacimiento>04/10/2004 0:00:00</fechaNacimiento>
     <direccion>estadio fello</direccion>
     <carrerasMatriculadas>
-      <CodigoCarrera>DER</CodigoCarrera>
     </carrerasMatriculadas>
   </estudiante>
 </estudiantes>

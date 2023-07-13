@@ -171,9 +171,9 @@ Namespace My
             Dim Node As XmlNode = xmlDoc.SelectSingleNode("/administradores")
             Node.RemoveAll() 'reiniciamos el xml
             xmlDoc.Save(routeAdministradores)
-            Dim Administrador1 As New Administrador(204944, "207920892", "Yordan Salazar", "3545334", "yordan@", "2003-02-04", "estadio fello", "holamundo")
-            Dim Administrador2 As New Administrador(354546, "43543545", "Danilo Salazar", "3545334", "danilo@", "2001-02-04", "parque", "holamundo")
-            Dim Administrador3 As New Administrador(996465, "67767676", "Andrey Guzman", "3545334", "andrey@", "2004-10-04", "estadio fello", "holamundo")
+            Dim Administrador1 As New Administrador(204944, "207920892", "Yordan Salazar", "3545334", "yordan@", "2003-02-04", "estadio fello", "holamundo", False)
+            Dim Administrador2 As New Administrador(354546, "43543545", "Danilo Salazar", "3545334", "danilo@", "2001-02-04", "parque", "holamundo", True)
+            Dim Administrador3 As New Administrador(996465, "67767676", "Andrey Guzman", "3545334", "andrey@", "2004-10-04", "estadio fello", "holamundo", True)
 
 
             Administrador1.Register(routeAdministradores)

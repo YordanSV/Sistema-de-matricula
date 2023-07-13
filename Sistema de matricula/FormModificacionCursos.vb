@@ -1,7 +1,7 @@
 ﻿Imports System.Xml
 
 Public Class FormModificacionCursos
-    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
+    Private route As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml"
     Private xmlDoc As New XmlDocument()
 
     Private Sub FormModificacionCursos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -74,10 +74,13 @@ Public Class FormModificacionCursos
     Private Sub GuardarCambios(codeCarrer As String, numSemester As String)
         ' Actualizar los datos modificados en el DataGridView al archivo XML
 
-
         Dim cursosNode As XmlNode = xmlDoc.SelectSingleNode("/carrers/carrer[code='" & codeCarrer & "']/semesters")
         Dim semesters As XmlNodeList = cursosNode.ChildNodes
 
+        ' Eliminar los cursos existentes en el XML del semestre correspondiente
+        For Each semester As XmlNode In semesters
+            semester.SelectSingleNode("courses").RemoveAll()
+        Next
 
         Dim semesterNumber As Integer = numSemester ' Obtener el número de semestre seleccionado
 
@@ -99,7 +102,6 @@ Public Class FormModificacionCursos
                         Dim degrees As String = row.Cells("Degrees").Value.ToString()
                         Dim active As String = row.Cells("Active").Value.ToString()
                         Dim courseCost As String = row.Cells("CourseCost").Value.ToString()
-
                         Dim newCourse As XmlNode = xmlDoc.CreateElement("course")
 
                         Dim codeNode As XmlNode = xmlDoc.CreateElement("code")

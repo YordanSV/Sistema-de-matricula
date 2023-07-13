@@ -48,7 +48,7 @@ Public Class Estudiante
         root.AppendChild(estudianteElement)
 
         ' Agrega los elementos de datos del estudiante
-        AddXmlElement(xmlDoc, estudianteElement, "carne", Me.Carne.ToString())
+        AddXmlElement(xmlDoc, estudianteElement, "carnet", Me.Carne.ToString())
         AddXmlElement(xmlDoc, estudianteElement, "identificacion", Me.Identificacion)
         AddXmlElement(xmlDoc, estudianteElement, "nombreCompleto", Me.NombreCompleto)
         AddXmlElement(xmlDoc, estudianteElement, "telefono", Me.Telefono)
