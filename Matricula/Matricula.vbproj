@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFramework>net6.0-windows10.0.22621.0</TargetFramework>
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
@@ -12,6 +12,13 @@
     <Import Include="System.Data" />
     <Import Include="System.Drawing" />
     <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Carreras\Carreras.vbproj" />
+    <ProjectReference Include="..\Datos\Datos.vbproj" />
+    <ProjectReference Include="..\Plan\Plan.vbproj" />
+    <ProjectReference Include="..\Usuarios\Usuarios.vbproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -33,16 +33,16 @@ Namespace My
     Partial Friend Class MyApplication
 
         Dim xmlDoc As New XmlDocument()
-
+        ' Obtiene la ruta del directorio actual del proyecto
 
         Private Sub MyApplication_Startup(sender As Object, e As StartupEventArgs) Handles Me.Startup
 
             Dim grados1 As New List(Of String) From {"Bachillerato"}
             Dim grados2 As New List(Of String) From {"Bachillerato", "Maestria"}
             Dim grados3 As New List(Of String) From {"Bachillerato", "Maestria", "Doctorado"}
-            Dim routeCarreras As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Carreras.xml"
-            Dim routeAdministradores As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
-            Dim routeEstudiantes As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Estudiantes.xml"
+            Dim routeCarreras As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Carreras.xml"
+            Dim routeAdministradores As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
+            Dim routeEstudiantes As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Estudiantes.xml"
 
 
             Dim cursosTI As New List(Of Carreras.Curso) From {

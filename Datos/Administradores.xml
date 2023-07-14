@@ -6,7 +6,7 @@
     <nombreCompleto>Yordan Salazar</nombreCompleto>
     <telefono>3545334</telefono>
     <correoElectronico>yordan@</correoElectronico>
-    <fechaNacimiento>04/02/2003 0:00:00</fechaNacimiento>
+    <fechaNacimiento>4/2/2003 00:00:00</fechaNacimiento>
     <direccion>estadio fello</direccion>
     <contrasena>holamundo</contrasena>
     <activo>False</activo>
@@ -17,7 +17,7 @@
     <nombreCompleto>Danilo Salazar</nombreCompleto>
     <telefono>3545334</telefono>
     <correoElectronico>danilo@</correoElectronico>
-    <fechaNacimiento>04/02/2001 0:00:00</fechaNacimiento>
+    <fechaNacimiento>4/2/2001 00:00:00</fechaNacimiento>
     <direccion>parque</direccion>
     <contrasena>holamundo</contrasena>
     <activo>True</activo>
@@ -28,7 +28,7 @@
     <nombreCompleto>Andrey Guzman</nombreCompleto>
     <telefono>3545334</telefono>
     <correoElectronico>andrey@</correoElectronico>
-    <fechaNacimiento>04/10/2004 0:00:00</fechaNacimiento>
+    <fechaNacimiento>4/10/2004 00:00:00</fechaNacimiento>
     <direccion>estadio fello</direccion>
     <contrasena>holamundo</contrasena>
     <activo>True</activo>

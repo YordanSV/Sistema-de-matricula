@@ -2,7 +2,7 @@
 Imports Usuarios
 
 Public Class IniciarSesion
-    Private route As String = "C:\Users\Estudiante\source\repos\YordanSV\Sistema-de-matricula\Datos\Administradores.xml"
+    Private route As String = "C:\Users\yorda\OneDrive\Documentos\CUC\II Cuatrimestre 2023\Programación II\Sistema de matricula\Datos\Administradores.xml"
     Private xmlDoc As New XmlDocument()
 
 
@@ -64,7 +64,6 @@ Public Class IniciarSesion
     End Sub
 
     Private Sub IniciarSesion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim formPrincipal As New FormModificacionEstudintes()
-        formPrincipal.Show()
+
     End Sub
 End Class
